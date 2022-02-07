@@ -16,7 +16,7 @@ router.get('/', (req, res) => {
 router.get('/policyowners', (req, res) => {
   User.findAll({
     attributes: { exclude: ['password'] },
-    where: { policyOwner = true },
+    where: { policyOwner: true },
   })
   .then(dbPolicyOwnerData => res.json(dbPolicyOwnerData))
   .catch((err) => {
@@ -28,7 +28,7 @@ router.get('/policyowners', (req, res) => {
 router.get('/admins', adminRequired, (req, res) => {
   User.findAll({
     attributes: { exclude: ['password'] },
-    where: { admin = true },
+    where: { admin: true },
   })
   .then(dbPolicyOwnerData => res.json(dbPolicyOwnerData))
   .catch((err) => {
@@ -61,7 +61,6 @@ router.put('/:username', adminRequired, (req, res) => {
       username: req.params.username
       }
     })
-  })
   .then(dbUserData => {
     if (!dbUserData) {
       res.status(404).json({ message: 'No user found with this username' });
@@ -72,6 +71,7 @@ router.put('/:username', adminRequired, (req, res) => {
   .catch(err => {
     console.log(err);
     res.status(500).json(err);
+  })  
 });
 
 module.exports = router;
