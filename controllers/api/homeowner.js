@@ -30,4 +30,48 @@ router.post('/', (req, res) => {
     });
 })
 
+router.get('/:id', (req, res) => {
+    Homeowners.findOne({
+        where:{
+            id: req.params.id
+        },
+        include:{
+            model: PolicyOwner
+        }
+    })
+    .then(dbHomeownerData => {
+        if (!dbHomeownerData) {
+            res.status(404).json({ message: "No user found with this id" });
+            return;
+          }
+          res.json(dbHomeownerData);
+        })
+        .catch((err) => {
+          console.log(err);
+          res.status(500).json(err);
+        });
+})
+
+router.delete('/:id', (req, res) => {
+    Homeowners.destroy({
+        where:{
+            id: req.params.id
+        },
+        include:{
+            model: PolicyOwner
+        }
+    })
+    .then(dbHomeownerData => {
+        if (!dbHomeownerData) {
+            res.status(404).json({ message: "No user found with this id" });
+            return;
+          }
+          res.json(dbHomeownerData);
+        })
+        .catch((err) => {
+          console.log(err);
+          res.status(500).json(err);
+        });
+})
+
 module.exports = router
