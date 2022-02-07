@@ -1,4 +1,4 @@
-const bcrypt = require('bcryptjs');
+const bcrypt = require('bcrypt');
 const knex = require('../config/connection');
 
 function comparePass(userPassword, databasePassword) {
