@@ -23,7 +23,7 @@ router.post('/', (req, res) => {
         property_address: req.body.property_address,
         owner_id: req.body.owner_id
     })
-    .then((dbUserData) => res.json(dbUserData))
+    .then((dbHomeownerData) => res.json(dbHomeownerData))
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);

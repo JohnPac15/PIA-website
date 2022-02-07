@@ -14,7 +14,8 @@ router.get('/', (req, res) => {
       });
 })
 
-router.post('/', (res, req) => {
+router.post('/', (req, res) => {
+    console.log('whats up')
     Auto.create({
         company_name: req.body.company_name,
         aunnal_premiun: req.body.aunnal_premiun,

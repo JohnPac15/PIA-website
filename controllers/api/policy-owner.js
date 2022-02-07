@@ -30,7 +30,7 @@ router.get('/:id', (req, res) => {
   }
 })
 .then(dbPolicyOwnerData => {
-  if (!dbAutoData) {
+  if (!dbPolicyOwnerData) {
       res.status(404).json({ message: "No user found with this id" });
       return;
     }
