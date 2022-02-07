@@ -1,0 +1,43 @@
+// const { Model, DataTypes } = require("sequelize");
+// const sequelize = require("../config/connection");
+
+// class Policies extends Model{}
+
+// Policies.init({
+
+//     id: {
+//         type: DataTypes.INTEGER,
+//         allowNull: false,
+//         primaryKey: true,
+//         autoIncrement: true,
+//     },
+//     owner_id:{
+//         type: DataTypes.INTEGER,
+//         references: {
+//             model: 'policy_owner',
+//             key: 'id'
+//         }
+//     },
+//     homeowner_id:{
+//         type: DataTypes.INTEGER,
+//         references: {
+//             model: 'homeowners_policies',
+//             key: 'id'
+//         }
+//     },
+//     auto_id:{
+//         type: DataTypes.INTEGER,
+//         references: {
+//             model: 'auto_policies',
+//             key: 'id'
+//         }
+//     }
+// },
+// {
+//     sequelize,
+//     freezeTableName: true,
+//     underscored: true,
+//     modelName: 'policies'
+// }
+// )
+// module.exports = Policies
