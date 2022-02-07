@@ -33,7 +33,7 @@ Homeowners.init(
         owner_id:{
             type: DataTypes.INTEGER,
             references: {
-                model: 'policy_owner',
+                model: 'users',
                 key: 'id'
             }
         },

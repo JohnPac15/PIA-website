@@ -2,13 +2,13 @@ const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 const bcrypt = require("bcrypt");
 
-class PolicyOwner extends Model {
+class User extends Model {
     checkPassword(loginPw) {
       return bcrypt.compareSync(loginPw, this.password);
     }
 }
 
-PolicyOwner.init({
+User.init({
   id: {
     type: DataTypes.INTEGER,
     allowNull: false,
@@ -23,12 +23,26 @@ PolicyOwner.init({
     type: DataTypes.STRING,
     allowNull: false,
   },
+  username: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
   password: {
     type: DataTypes.STRING,
     allowNull: false,
     validate: {
       len: [4],
     },
+  },
+  PolicyOwner: {
+    type: DataTypes.BOOLEAN,
+    allowNull: false,
+    defaultValue: true,
+  },
+  admin: {
+    type: DataTypes.BOOLEAN,
+    allowNull: false,
+    defaultValue: false,
   },
 },
 {
@@ -49,8 +63,8 @@ PolicyOwner.init({
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "policy_owner",
+    modelName: "users",
   }
 );
 
-module.exports = PolicyOwner
+module.exports = User
