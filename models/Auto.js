@@ -18,7 +18,7 @@ Auto.init(
             type: DataTypes.INTEGER,
             allowNull: false
         },
-        policy_nmuber:{
+        policy_number:{
             type: DataTypes.INTEGER,
             allowNull: false
         },
@@ -26,7 +26,7 @@ Auto.init(
             type: DataTypes.DATE,
             allowNull: false
         },
-        vehicles:{
+        vehicle:{
             type: DataTypes.STRING,
             allowNull: false
         },
