@@ -2,7 +2,7 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 
 const init = require('./passport');
-const knex = require('../db/connection');
+const knex = require('../config/connection');
 const authHelpers = require('./_helpers');
 
 const options = {};

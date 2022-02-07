@@ -4,7 +4,6 @@ const routes = require('./controllers')
 const exphbs = require('express-handlebars');
 const path = require('path');
 const session = require('express-session');
-const LocalStrategy = require('passport-local').Strategy;
 const passport = require('passport');
 
 // const helpers = require('./utils/helpers');
@@ -38,12 +37,6 @@ app.use(passport.session());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(routes);
-
-// passport config
-const Account = require('./models/account');
-passport.use(new LocalStrategy(Account.authenticate()));
-passport.serializeUser(Account.serializeUser());
-passport.deserializeUser(Account.deserializeUser());
 
 sequelize.sync({ force: true }).then(() => {
     app.listen(PORT, () => console.log(`Now listening on port ${PORT}`));
