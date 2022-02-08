@@ -1,63 +1,65 @@
 const router = require('express').Router();
-const { adminRequired } = require('../../auth/_helpers');
-const {User, Policies, Homeowners, Auto} = require('../../models');
+const {PolicyOwner, Policies, Homeowners, Auto} = require('../../models');
 
 router.get('/', (req, res) => {
-  User.findAll({
-    attributes: { exclude: ['password'] },
-  })
-  .then(dbPolicyOwnerData => res.json(dbPolicyOwnerData))
-  .catch((err) => {
-    console.log(err);
-    res.status(500).json(err);
-  });
+    PolicyOwner.findAll()
+    .then(dbPolicyOwnerData => res.json(dbPolicyOwnerData))
+    .catch((err) => {
+        console.log(err);
+        res.status(500).json(err);
+      });
 })
 
-router.get('/policyowners', (req, res) => {
-  User.findAll({
-    attributes: { exclude: ['password'] },
-    where: { policyOwner: true },
-  })
-  .then(dbPolicyOwnerData => res.json(dbPolicyOwnerData))
-  .catch((err) => {
-    console.log(err);
-    res.status(500).json(err);
-  });
-})
-
-router.get('/admins', adminRequired, (req, res) => {
-  User.findAll({
-    attributes: { exclude: ['password'] },
-    where: { admin: true },
-  })
-  .then(dbPolicyOwnerData => res.json(dbPolicyOwnerData))
-  .catch((err) => {
-    console.log(err);
-    res.status(500).json(err);
-  });
-})
-
-router.put('/:username', adminRequired, (req, res) => {
-  User.update(
-    {
-      admin: req.body.admin
-    },
-    {
-    where: {
-      username: req.params.username
-      }
+router.post('/', (req, res) => {
+    PolicyOwner.create({
+        first_name: req.body.first_name,
+        last_name: req.body.last_name,
+        username: req.body.username,
+        password: req.body.password
     })
-  .then(dbUserData => {
-    if (!dbUserData) {
-      res.status(404).json({ message: 'No user found with this username' });
-      return;
+    .then((dbUserData) => res.json(dbUserData))
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+})
+
+router.get('/:id', (req, res) => {
+  PolicyOwner.findOne({
+    where:{
+      id: req.params.id
   }
-  res.json(dbUserData);
+})
+.then(dbPolicyOwnerData => {
+  if (!dbPolicyOwnerData) {
+      res.status(404).json({ message: "No user found with this id" });
+      return;
+    }
+    res.json(dbPolicyOwnerData);
   })
-  .catch(err => {
+  .catch((err) => {
     console.log(err);
     res.status(500).json(err);
-  })  
-});
+  });
+})
+
+router.delete('/:id', (req, res) => {
+  PolicyOwner.destroy({
+    where:{
+      id: req.params.id
+  }
+})
+.then(dbPolicyOwnerData => {
+  if (!dbAutoData) {
+      res.status(404).json({ message: "No user found with this id" });
+      return;
+    }
+    res.json(dbPolicyOwnerData);
+  })
+  .catch((err) => {
+    console.log(err);
+    res.status(500).json(err);
+  });
+})
 
 module.exports = router;

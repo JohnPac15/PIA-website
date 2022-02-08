@@ -33,7 +33,7 @@ Auto.init(
         owner_id:{
             type: DataTypes.INTEGER,
             references: {
-                model: 'users',
+                model: 'policy_owner',
                 key: 'id'
             }
         },

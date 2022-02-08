@@ -1,4 +1,4 @@
-const User = require('./User');
+const PolicyOwner = require('./PolicyOwner');
 const Policies = require('./Policies.This is not working yet');
 const Homeowners = require('./Homeowners');
 const Auto = require('./Auto')
@@ -11,22 +11,22 @@ const Auto = require('./Auto')
 //     foreignKey: 'owner_id'
 // })
 
-User.hasMany(Homeowners,{
+PolicyOwner.hasMany(Homeowners,{
     foreignKey: 'owner_id'
 })
 
-Homeowners.belongsTo(User, {
+Homeowners.belongsTo(PolicyOwner, {
     foreignKey: 'owner_id'
 })
 
-User.hasMany(Auto, {
+PolicyOwner.hasMany(Auto, {
     foreignKey: 'owner_id'
 })
 
-Auto.belongsTo(User, {
+Auto.belongsTo(PolicyOwner, {
     foreignKey: 'owner_id'
 })
 
 
-module.exports = {User, Policies, Homeowners, Auto}
+module.exports = {PolicyOwner, Policies, Homeowners, Auto}
 

@@ -1,10 +1,10 @@
 const router = require('express').Router();
-const {User, Policies, Homeowners, Auto} = require('../../models');
+const {PolicyOwner, Policies, Homeowners, Auto} = require('../../models');
 
 router.get('/', (req,res) =>{
     Homeowners.findAll({
         include:{
-            model: User
+            model: PolicyOwner
         }
     })
     .then(dbHomeownerData => res.json(dbHomeownerData))

@@ -28,7 +28,7 @@ function loginRequired(req, res, next) {
 }
 
 function adminRequired(req, res, next) {
-    if (!req.user) res.status(401).json({status: 'Please log in'});
+    if (!req.session.loggedIn) res.status(401).json({status: 'Please log in'});
     return knex('users').where({username: req.user.username}).first()
     .then((user) => {
       if (!user.admin) res.status(401).json({status: 'You are not authorized'});
@@ -40,7 +40,7 @@ function adminRequired(req, res, next) {
 }
 
 function loginRedirect(req, res, next) {
-    if (req.user) return res.status(401).json(
+    if (req.session.loggedIn) return res.status(401).json(
       {status: 'You are already logged in'});
     return next();
 }
