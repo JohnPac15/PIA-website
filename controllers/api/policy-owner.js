@@ -37,20 +37,6 @@ router.get('/admins', adminRequired, (req, res) => {
   });
 })
 
-router.post('/', (req, res) => {
-  User.create({
-    first_name: req.body.first_name,
-    last_name: req.body.last_name,
-    username: req.body.username,    
-    password: req.body.password
-  })
-  .then((dbUserData) => res.json(dbUserData))
-  .catch((err) => {
-    console.log(err);
-    res.status(500).json(err);
-  });
-})
-
 router.put('/:username', adminRequired, (req, res) => {
   User.update(
     {

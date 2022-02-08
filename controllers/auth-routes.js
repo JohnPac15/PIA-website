@@ -1,5 +1,7 @@
 const express = require('express');
 const router = express.Router();
+const req = require('express/lib/request');
+const res = require('express/lib/response');
 
 const authHelpers = require('../auth/_helpers');
 const passport = require('../auth/local');
@@ -13,18 +15,16 @@ router.post('/register', authHelpers.loginRedirect, (req, res, next)  => {
   .catch((err) => { handleResponse(res, 500, 'error'); });
 });
 
-router.post('/login', authHelpers.loginRedirect, (req, res, next) => {
-  passport.authenticate('local', (err, user, info) => {
-    if (err) { handleResponse(res, 500, 'error'); }
-    if (!user) { handleResponse(res, 404, 'User not found'); }
-    if (user) {
-      req.logIn(user, function (err) {
-        if (err) { handleResponse(res, 500, 'error'); }
-        handleResponse(res, 200, 'success');
-      });
-    }
-  })(req, res, next);
-});
+router.post('/login', authHelpers.loginRedirect, 
+  passport.authenticate('local', {successRedirect:'/dashboard', failureRedirect: '/login' }),
+    function(req, res) {
+    console.log('updating session'); 
+    req.session.username = res.body.username;
+    req.session.loggedIn = true;
+
+    res.json({ user: dbUserData, message: 'You are now logged in!' }); 
+    } 
+);
 
 router.get('/logout', authHelpers.loginRequired, (req, res, next) => {
   req.logout();

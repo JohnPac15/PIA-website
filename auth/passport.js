@@ -1,16 +1,21 @@
+const req = require('express/lib/request');
 const passport = require('passport');
-const knex = require('../config/connection');
+const { User } = require('../models');
 
 module.exports = () => {
 
-  passport.serializeUser((user, done) => {
-    done(null, user.id);
+  passport.serializeUser((username, done) => {
+    done(null, username);
   });
 
-  passport.deserializeUser((id, done) => {
-    knex('users').where({id}).first()
-    .then((user) => { done(null, user); })
-    .catch((err) => { done(err,null); });
+  passport.deserializeUser((username, done) => {
+    User.findOne({
+        where: {
+          username: username
+        }
+      })
+      .then((user) => { done(null, user); })
+      .catch((err) => { done(err,null); });
   });
-
+  
 };

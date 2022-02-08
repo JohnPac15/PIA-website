@@ -6,6 +6,7 @@ const path = require('path');
 const session = require('express-session');
 const passport = require('passport');
 
+
 // const helpers = require('./utils/helpers');
 
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
@@ -20,20 +21,21 @@ const sess = {
   })
 };
 
-// const hbs = exphbs.create({helpers})
+const hbs = exphbs.create();
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// app.engine('handlebars', hbs.engine);
+app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
 app.use(session(sess));
+app.use(passport.initialize());
+app.use(passport.session());
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use(passport.initialize());
-app.use(passport.session());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(routes);
