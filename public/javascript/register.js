@@ -1,14 +1,21 @@
 async function signupFormHandler(event) {
   event.preventDefault();
-  const username = document.querySelector('#username-signup').value.trim();
-  const password = document.querySelector('#password-signup').value.trim();
-  
-  if (username && password) {
+
+  const first_name = document.querySelector('#firstname-register').value.trim();
+  const last_name = document.querySelector('#lastname-register').value.trim();
+  const username = document.querySelector('#username-register').value.trim();
+  const password = document.querySelector('#password-register').value.trim();
+  const policy_owner = document.querySelector('#policyowner-register').value.trim();
+
+  if (first_name && last_name && username && password) {
     const response = await fetch('/api/users', {
       method: 'post',
       body: JSON.stringify({
+        first_name,
+        last_name,
         username,
-        password
+        password,
+        policy_owner
       }),
       headers: { 'Content-Type': 'application/json' }
     });
@@ -22,4 +29,4 @@ async function signupFormHandler(event) {
   }
 }    
     
-document.querySelector('.signup-form').addEventListener('submit', signupFormHandler);
+document.querySelector('.register-form').addEventListener('submit', signupFormHandler);

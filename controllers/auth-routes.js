@@ -1,8 +1,14 @@
 const router = require('express').Router();
 const { PolicyOwner } = require('../models');
-const authHelpers = require('../auth/_helpers');
 
 router.post('/register', (req, res)  => {
+  PolicyOwner.findOne({
+    where: {
+     username: req.body.username
+    }
+  })
+  .then(dbUserData => {
+  if (!dbUserData){  
   PolicyOwner.create({
     first_name: req.body.first_name,
     last_name: req.body.last_name,
@@ -17,6 +23,14 @@ router.post('/register', (req, res)  => {
   
       res.json(dbUserData);
     });
+  })
+  .catch((err) => {
+    console.log(err);
+    res.status(500).json(err);
+  });
+  } else {
+    res.status(400).json({ message: 'That username is not available!' });
+  }
   })
 });
 
