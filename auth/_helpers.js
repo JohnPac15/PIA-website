@@ -1,28 +1,38 @@
-const bcrypt = require('bcryptjs');
-const knex = require('../config/connection');
+const router = require('express').Router();
+const { PolicyOwner } = require('../models');
 
-function comparePass(userPassword, databasePassword) {
-  return bcrypt.compareSync(userPassword, databasePassword);
+const loginRequired = (req, res, next) => {
+  if (!req.session.user_id) {
+    res.redirect('/login');
+  } else {
+    next();
+  }
+};
+
+const adminRequired = (req, res, next) => {
+  if (!req.session.user_id) { res.redirect('/login'); }
+  PolicyOwner.findOne({
+    where: {
+     username: req.session.username
+    }
+  })  
+  .then((user) => {
+    if (!user.admin) res.status(401).json({status: 'You are not authorized'});
+    return next();
+  })
+  .catch((err) => {
+    res.status(500).json({status: 'Something bad happened'});
+  });
 }
 
-function createUser (req) {
-    const salt = bcrypt.genSaltSync();
-    const hash = bcrypt.hashSync(req.body.password, salt);
-    return knex('users')
-    .insert({
-      username: req.body.username,
-      password: hash
-    })
-    .returning('*');
-}
-
-function loginRequired(req, res, next) {
-    if (!req.user) return res.status(401).json({status: 'Please log in'});
+function loginRedirect(req, res, next) {
+    if (req.session.loggedIn) return res.status(401).json(
+      {status: 'You are already logged in'});
     return next();
 }
 
 module.exports = {
-  comparePass,
-  createUser,
-  loginRequired
+  loginRequired,
+  adminRequired,
+  loginRedirect
 };
