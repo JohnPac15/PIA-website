@@ -3,7 +3,8 @@ const { Auto, Homeowners, Policies, PolicyOwner } = require('../models');
 const authHelpers = require('../auth/_helpers');
 
 router.get('/', (req, res) => {
-  res.render('homepage');
+  console.log(req.session);
+  res.render('homepage', {loggedIn: req.session.loggedIn});
 });
 
 router.get('/login', (req, res) => {
@@ -26,6 +27,12 @@ router.get('/register', (req, res) => {
 
 router.get('/dashboard', authHelpers.loginRequired, (req, res) => {
   res.render('dashboard');
+});
+
+router.get('/admin', authHelpers.adminRequired, (req, res) => {
+  res.render('admin', {
+    loggedIn: req.session.loggedIn,
+    admin: req.session.admin});
 });
 
 module.exports = router;
