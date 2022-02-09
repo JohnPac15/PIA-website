@@ -26,17 +26,15 @@ router.get('/register', (req, res) => {
 });
 
 router.get('/dashboard', authHelpers.loginRequired, (req, res) => {
-  res.render('dashboard');
+  res.render('dashboard', {
+    loggedIn: req.session.loggedIn,
+    admin: req.session.admin});
 });
 
 router.get('/admin', authHelpers.adminRequired, (req, res) => {
   res.render('admin', {
     loggedIn: req.session.loggedIn,
     admin: req.session.admin});
-});
-
-router.get('/login', (req, res) => {
-  res.render('login');
 });
 
 module.exports = router;
