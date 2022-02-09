@@ -75,10 +75,8 @@ router.post('/login', (req, res) => {
 
 router.get('/logout', (req, res) => {
   if (req.session.loggedIn) {
-    req.session.destroy(() => {
-      res.status(204).end();      
-    });
-    res.render('homepage');
+    req.session.destroy();
+    res.render("homepage");
   } else {
     res.status(404).end();
   }
