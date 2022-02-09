@@ -23,6 +23,15 @@ PolicyOwner.init({
     type: DataTypes.STRING,
     allowNull: false,
   },
+  email: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  username: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    unique: true,
+  },
   password: {
     type: DataTypes.STRING,
     allowNull: false,
@@ -30,6 +39,16 @@ PolicyOwner.init({
       len: [4],
     },
   },
+  policyOwner: {
+    type: DataTypes.BOOLEAN,
+    allowNull: false,
+    defaultValue: true,
+  },
+  admin: {
+    type: DataTypes.BOOLEAN,
+    allowNull: false,
+    defaultValue: false,
+  },  
 },
 {
     hooks: {

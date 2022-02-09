@@ -18,7 +18,7 @@ Auto.init(
             type: DataTypes.INTEGER,
             allowNull: false
         },
-        policy_nmuber:{
+        policy_number:{
             type: DataTypes.INTEGER,
             allowNull: false
         },
@@ -26,14 +26,14 @@ Auto.init(
             type: DataTypes.DATE,
             allowNull: false
         },
-        vehicles:{
+        vehicle:{
             type: DataTypes.STRING,
             allowNull: false
         },
         owner_id:{
             type: DataTypes.INTEGER,
             references: {
-                model: 'policy_owner',
+                model: "policy_owner",
                 key: 'id'
             }
         },
@@ -47,4 +47,4 @@ Auto.init(
     }
 )
 
-module.exports = Auto
+module.exports = Auto;

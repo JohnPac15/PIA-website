@@ -1,37 +1,38 @@
 const router = require('express').Router();
 const {PolicyOwner, Homeowners, Auto} = require('../../models');
 
-router.get('/', (req,res) =>{
-    Homeowners.findAll({
+router.get('/', (req, res) => {
+    Auto.findAll({
         include:{
             model: PolicyOwner
         }
     })
-    .then(dbHomeownerData => res.json(dbHomeownerData))
+    .then(dbAutoData => res.json(dbAutoData))
     .catch((err) => {
-      console.log(err);
-      res.status(500).json(err);
-    });
+        console.log(err);
+        res.status(500).json(err);
+      });
 })
 
 router.post('/', (req, res) => {
-    Homeowners.create({
+    console.log('whats up')
+    Auto.create({
         company_name: req.body.company_name,
         aunnal_premiun: req.body.aunnal_premiun,
         policy_number: req.body.policy_number,
         expiration_date: req.body.expiration_date,
-        property_address: req.body.property_address,
+        vehicle: req.body.vehicle,
         owner_id: req.body.owner_id
     })
-    .then((dbHomeownerData) => res.json(dbHomeownerData))
+    .then(dbAutoData => res.json(dbAutoData))
     .catch((err) => {
-      console.log(err);
-      res.status(500).json(err);
-    });
+        console.log(err);
+        res.status(500).json(err);
+      });
 })
 
-router.get('/:id', (req, res) => {
-    Homeowners.findOne({
+router.get('/:id', (res, req) => {
+    Auto.findOne({
         where:{
             id: req.params.id
         },
@@ -39,12 +40,12 @@ router.get('/:id', (req, res) => {
             model: PolicyOwner
         }
     })
-    .then(dbHomeownerData => {
-        if (!dbHomeownerData) {
+    .then(dbAutoData => {
+        if (!dbAutoData) {
             res.status(404).json({ message: "No user found with this id" });
             return;
           }
-          res.json(dbHomeownerData);
+          res.json(dbAutoData);
         })
         .catch((err) => {
           console.log(err);
@@ -53,22 +54,23 @@ router.get('/:id', (req, res) => {
 })
 
 router.delete('/:id', (req, res) => {
-    Homeowners.destroy({
+    Auto.destroy({
         where:{
             id: req.params.id
-        },
+        }
     })
-    .then(dbHomeownerData => {
-        if (!dbHomeownerData) {
+    .then(dbAutoData => {
+        if (!dbAutoData) {
             res.status(404).json({ message: "No user found with this id" });
             return;
           }
-          res.json(dbHomeownerData);
+          res.json(dbAutoData);
         })
         .catch((err) => {
           console.log(err);
           res.status(500).json(err);
         });
+
 })
 
 module.exports = router
