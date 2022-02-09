@@ -1,5 +1,3 @@
-const validator = require('validator');
-
 async function signupFormHandler(event) {
     event.preventDefault();
   
@@ -8,11 +6,10 @@ async function signupFormHandler(event) {
     const email = document.querySelector('#email-register').value.trim();
     const username = document.querySelector('#username-register').value.trim();
     const password = document.querySelector('#password-register').value.trim();
-    
-    const emailCheck = validator.isEmail(email);
 
-    if (first_name && last_name && emailCheck && username && password) {
-      const response = await fetch('/api/users', {
+    if (first_name && last_name && email && username && password) {
+      
+      const response = await fetch('/register', {
         method: 'post',
         body: JSON.stringify({
           first_name,
