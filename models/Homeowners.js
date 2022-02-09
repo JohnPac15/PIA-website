@@ -14,7 +14,7 @@ Homeowners.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        aunnal_premiun:{
+        annual_premium:{
             type: DataTypes.INTEGER,
             allowNull: false
         },
