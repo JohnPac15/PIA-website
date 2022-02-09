@@ -40,6 +40,8 @@ router.get('/:username', (req, res) => {
   });
 })
 
+router.put('/edit:id')
+
 router.delete('/:id', (req, res) => {
   PolicyOwner.destroy({
     where:{
