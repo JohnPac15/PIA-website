@@ -9,7 +9,8 @@ PolicyOwner.hasMany(Homeowners,{
 })
 
 Homeowners.belongsTo(PolicyOwner, {
-    foreignKey: 'owner_id'
+    foreignKey: 'owner_id',
+    onDelete: "set null"
 })
 
 PolicyOwner.hasMany(Auto, {

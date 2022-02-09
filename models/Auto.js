@@ -23,7 +23,7 @@ Auto.init(
             allowNull: false
         },
         expiration_date:{
-            type: DataTypes.DATE,
+            type: DataTypes.STRING,
             allowNull: false
         },
         vehicle:{

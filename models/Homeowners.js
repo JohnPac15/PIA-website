@@ -23,7 +23,7 @@ Homeowners.init(
             allowNull: false
         },
         expiration_date:{
-            type: DataTypes.DATE(6),
+            type: DataTypes.STRING,
             allowNull: false
         },
         property_address:{ 

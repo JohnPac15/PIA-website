@@ -1,0 +1,22 @@
+<section>
+    <h1>Welcome {{user.username}}</h1>
+<div>
+    <h1>Property Policies</h1>
+    {{#each user.homeowners_policies as |home|}}
+    <p>Property address: {{property_address}}</p>
+    <p>Your Policy is with {{home.company_name}}</p>
+    <p>Your premium is: {{home.aunnal_premiun}}</p>
+    Your policy will expire on: {{home.expiration_date}}
+    {{/each}}
+
+</div>
+<div>
+    <h1>Auto Policies</h1>
+    {{#each user.auto_policies as |auto|}}
+    <p>Your auto pilocy will expire on: {{auto.expiration_date}}</p>
+    <p>Your auto policy is with: {{auto.company_name}}</p>
+    <p>Vehicle on policy is: {{auto.vehicle}}</p>
+    <p>Your premium is: {{auto.aunnal_premiun}}</p>
+    {{/each}}
+</div>
+</section>
