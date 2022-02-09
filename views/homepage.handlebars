@@ -1,1 +1,318 @@
-<div>You are on the homepage</div>
+{{! showcase }}
+
+<section class="bg-secondary text-light p-5 text-center text-sm-start">
+  <div class="container">
+    <div class="d-sm-flex align-items-center justify-content-between">
+      <div>
+        <h1>The Title will go <span class="text-warning">here</span></h1>
+        <p class="lead my-4">Lorem ipsum dolor sit amet consectetur adipisicing
+          elit. Labore sequi, minima a quo autem debitis cupiditate veniam
+          sapiente temporibus esse!</p>
+        <a href="/login"><button class="btn btn-warning btn-lg">Start Enrollment</button></a>
+      </div>
+      <img class="img-fluid w-50 d-none d-sm-block" src="showcase.svg" alt="" />
+    </div>
+  </div>
+</section>
+
+{{! feature boxes }}
+<section class="p-5 bg-white" id="features">
+  <div class="container">
+    <div class="row text-center g-4 py-5">
+      <div class="col-md">
+        <div class="card-body bg-dark text-light py-5">
+          <div class="h1 mb-3">
+            <i class="bi bi-laptop"></i>
+          </div>
+          <h3 class="card-title mb-3">
+            card title
+          </h3>
+          <p class="card-text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde
+            architecto maxime nostrum tempore aspernatur! Hic non nemo laborum
+            vero eaque.
+          </p>
+        </div>
+      </div>
+      <div class="col-md">
+        <div class="card-body bg-warning text-dark py-5">
+          <div class="h1 mb-3">
+            <i class="bi bi-person-square"></i>
+          </div>
+          <h3 class="card-title mb-3">
+            card title
+          </h3>
+          <p class="card-text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde
+            architecto maxime nostrum tempore aspernatur! Hic non nemo laborum
+            vero eaque.
+          </p>
+        </div>
+      </div>
+      <div class="col-md">
+        <div class="card-body bg-dark text-light py-5">
+          <div class="h1 mb-3">
+            <i class="bi bi-people"></i>
+          </div>
+          <h3 class="card-title mb-3">
+            card title
+          </h3>
+          <p class="card-text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde
+            architecto maxime nostrum tempore aspernatur! Hic non nemo laborum
+            vero eaque.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{{!about us }}
+<section class="p-5 bg-light" id="about">
+  <div class="container">
+    <div class="row align-items-center justify-content-between">
+      <div class="col-md">
+        <img class="img-fluid" src="section-1.svg" alt="" />
+      </div>
+      <div class="col-md p-5">
+        <h2>About Section</h2>
+        <p class="lead">Lorem ipsum dolor sit amet consectetur, adipisicing
+          elit. Aperiam accusamus repellat, similique hic ex ad.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil
+          aperiam sed sunt qui ipsum accusamus pariatur. Cumque quisquam,
+          consequatur repellendus obcaecati et deserunt sequi quam deleniti. Eum
+          alias quam esse.</p>
+        <a href="#" class="btn btn-warning mt-3">
+          <i class="bi bi-chevron-right"></i>
+          Learn More
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{! Question Section }}
+
+<section class="p-5 bg-white" id="questions">
+  <div class="container">
+    <h2 class="text-center mb-4">Frequently Asked Questions</h2>
+    <div class="accordion accordion-flush" id="questions">
+      {{! item 1 }}
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingOne">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#flush-collapseOne"
+            aria-expanded="false"
+            aria-controls="flush-collapseOne"
+          >
+            Where exactly are you located?
+          </button>
+        </h2>
+        <div
+          id="flush-collapseOne"
+          class="accordion-collapse collapse"
+          aria-labelledby="flush-headingOne"
+          data-bs-parent="#questions"
+        >
+          <div class="accordion-body">Placeholder content for this accordion,
+            which is intended to demonstrate the
+            <code>.accordion-flush</code>
+            class. This is the first item's accordion body.</div>
+        </div>
+      </div>
+      {{! item 2 }}
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingTwo">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#flush-collapseTwo"
+            aria-expanded="false"
+            aria-controls="flush-collapseTwo"
+          >
+            What are the pricing?
+          </button>
+        </h2>
+        <div
+          id="flush-collapseTwo"
+          class="accordion-collapse collapse"
+          aria-labelledby="flush-headingTwo"
+          data-bs-parent="#questions"
+        >
+          <div class="accordion-body">Placeholder content for this accordion,
+            which is intended to demonstrate the
+            <code>.accordion-flush</code>
+            class. This is the second item's accordion body. Let's imagine this
+            being filled with some actual content.</div>
+        </div>
+      </div>
+      {{! item 3 }}
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingThree">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#flush-collapseThree"
+            aria-expanded="false"
+            aria-controls="flush-collapseThree"
+          >
+            How to create an account?
+          </button>
+        </h2>
+        <div
+          id="flush-collapseThree"
+          class="accordion-collapse collapse"
+          aria-labelledby="flush-headingThree"
+          data-bs-parent="#questions"
+        >
+          <div class="accordion-body">Placeholder content for this accordion,
+            which is intended to demonstrate the
+            <code>.accordion-flush</code>
+            class. This is the third item's accordion body. Nothing more
+            exciting happening here in terms of content, but just filling up the
+            space to make it look, at least at first glance, a bit more
+            representative of how this would look in a real-world application.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{! meet the team }}
+<section class="p-5 bg-warning" id="team">
+  <div class="container">
+    <h2 class="text-center text-dark">Our Team</h2>
+    <p class="lead text-center text-dark mb-5">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, iusto.
+    </p>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3">
+        <div class="card bg-light">
+          <div class="card-body text-center">
+            <img
+              src="https://randomuser.me/api/portraits/men/11.jpg"
+              class="rounded-circle mb-3"
+              alt=""
+            />
+            <h3 class="card-title mb-3">
+              John Doe
+            </h3>
+            <p class="card-text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Voluptatibus, corrupti officia? Sunt cupiditate ducimus tenetur.
+            </p>
+            <a href="#"><i class="bi bi-twitter text-dark mx-1"></i></a>
+            <a href="#"><i class="bi bi-facebook text-dark mx-1"></i></a>
+            <a href="#"><i class="bi bi-linkedin text-dark mx-1"></i></a>
+            <a href="#"><i class="bi bi-instagram text-dark mx-1"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="card bg-light">
+          <div class="card-body text-center">
+            <img
+              src="https://randomuser.me/api/portraits/women/11.jpg"
+              class="rounded-circle mb-3"
+              alt=""
+            />
+            <h3 class="card-title mb-3">
+              Jane Doe
+            </h3>
+            <p class="card-text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Voluptatibus, corrupti officia? Sunt cupiditate ducimus tenetur.
+            </p>
+            <a href="#"><i class="bi bi-twitter text-dark mx-1"></i></a>
+            <a href="#"><i class="bi bi-facebook text-dark mx-1"></i></a>
+            <a href="#"><i class="bi bi-linkedin text-dark mx-1"></i></a>
+            <a href="#"><i class="bi bi-instagram text-dark mx-1"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="card bg-light">
+          <div class="card-body text-center">
+            <img
+              src="https://randomuser.me/api/portraits/men/15.jpg"
+              class="rounded-circle mb-3"
+              alt=""
+            />
+            <h3 class="card-title mb-3">
+              Steve Smith
+            </h3>
+            <p class="card-text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Voluptatibus, corrupti officia? Sunt cupiditate ducimus tenetur.
+            </p>
+            <a href="#"><i class="bi bi-twitter text-dark mx-1"></i></a>
+            <a href="#"><i class="bi bi-facebook text-dark mx-1"></i></a>
+            <a href="#"><i class="bi bi-linkedin text-dark mx-1"></i></a>
+            <a href="#"><i class="bi bi-instagram text-dark mx-1"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="card bg-light">
+          <div class="card-body text-center">
+            <img
+              src="https://randomuser.me/api/portraits/women/8.jpg"
+              class="rounded-circle mb-3"
+              alt=""
+            />
+            <h3 class="card-title mb-3">
+              Sara Smith
+            </h3>
+            <p class="card-text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Voluptatibus, corrupti officia? Sunt cupiditate ducimus tenetur.
+            </p>
+            <a href="#"><i class="bi bi-twitter text-dark mx-1"></i></a>
+            <a href="#"><i class="bi bi-facebook text-dark mx-1"></i></a>
+            <a href="#"><i class="bi bi-linkedin text-dark mx-1"></i></a>
+            <a href="#"><i class="bi bi-instagram text-dark mx-1"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{! contact section }}
+
+<section class="p-5 bg-light" id="contact">
+  <div class="container my-5 py-5">
+    <div class="row">
+      <div class="col-12 col-sm-8 col-md-6 m-auto">
+        <div class="card border-0 shadow py-5">
+          <div class="card-body">
+            <h2 class="text-center mb-5">Contact Info</h2>
+            <ul class="list-group list-group-flush lead">
+              <li class="list-group-item">
+                <span class="fw-bold"><i class="bi bi-geo-alt-fill pe-3"></i> </span>
+                50 Main st Boston MA
+              </li>
+              <li class="list-group-item">
+                <span class="fw-bold"><i class="bi bi-telephone-fill pe-3"></i>
+                </span>
+                (555) 555-5555
+              </li>
+              <li class="list-group-item">
+                <span class="fw-bold"><i class="bi bi-envelope-fill pe-3"></i>
+                </span>
+                enroll@email.com
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -35,4 +35,8 @@ router.get('/admin', authHelpers.adminRequired, (req, res) => {
     admin: req.session.admin});
 });
 
+router.get('/login', (req, res) => {
+  res.render('login');
+});
+
 module.exports = router;
