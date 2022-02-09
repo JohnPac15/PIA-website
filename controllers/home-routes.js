@@ -4,12 +4,16 @@ const authHelpers = require("../auth/_helpers");
 
 router.get("/", (req, res) => {
   console.log(req.session);
-  res.render("homepage", { loggedIn: req.session.loggedIn });
+  res.render("homepage", {
+    loggedIn: req.session.loggedIn,
+    admin: req.session.admin});
 });
 
 router.get("/login", (req, res) => {
   if (req.session.loggedIn) {
-    res.render("dashboard");
+    res.render("dashboard", {
+      loggedIn: req.session.loggedIn,
+      admin: req.session.admin});
     return;
   }
 
@@ -55,10 +59,28 @@ router.get("/dashboard", authHelpers.loginRequired, (req, res) => {
 });
 
 router.get("/admin", authHelpers.adminRequired, (req, res) => {
-  res.render("admin", {
-    loggedIn: req.session.loggedIn,
-    admin: req.session.admin,
-  });
+  PolicyOwner.findAll({
+    where: {
+      policy_owner: true
+    },
+    include: [
+      {
+        model: Homeowners
+      },
+      {
+        model: Auto
+      }
+    ]
+
+  })
+  .then(dbPolicyOwnerData => {
+    const user = dbPolicyOwnerData.map(policy_owner => policy_owner.get({ plain: true }));
+    console.log(user);
+    res.render("admin", {user,
+      loggedIn: req.session.loggedIn,
+      admin: req.session.admin,
+    });
+  })
 });
 
 module.exports = router;
