@@ -24,7 +24,7 @@
           class="navbar navbar-expand-lg bg-secondary navbar-dark py-3 fixed-top"
         >
           <div class="container">
-            <a href="/homepage" class="navbar-brand">PIA</a>
+            <a href="/" class="navbar-brand">PIA</a>
 
             <button
               class="navbar-toggler"
@@ -58,6 +58,11 @@
                   <li class="nav-item">
                     <a href="/logout" id="logout" class="nav-link">Logout</a>
                   </li>
+                  {{#if admin}}
+                  <li class="nav-item">
+                    <a href="/admin" id="admin" class="nav-link">Agents</a>
+                  </li>
+                  {{/if}}
                 {{else}}
                   <li class="nav-item">
                     <a href="/login" class="nav-link">LogIn</a>

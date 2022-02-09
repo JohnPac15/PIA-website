@@ -1,1 +1,24 @@
-<p> Future Development.  Admin portal.</p>
+{{#each user}}
+<section>
+    <h3>{{username}}:</h3>
+<div>
+    <h1>Property Policies</h1>
+    {{#each homeowners_policies as |home|}}
+    <p>Property address: {{property_address}}</p>
+    <p>Your Policy is with {{home.company_name}}</p>
+    <p>Your premium is: {{home.annual_premium}}</p>
+    Your policy will expire on: {{format_date home.expiration_date}}
+    {{/each}}
+
+</div>
+<div>
+    <h1>Auto Policies</h1>
+    {{#each auto_policies as |auto|}}
+    <p>Your auto pilocy will expire on: {{format_date auto.expiration_date}}</p>
+    <p>Your auto policy is with: {{auto.company_name}}</p>
+    <p>Vehicle on policy is: {{auto.vehicle}}</p>
+    <p>Your premium is: {{auto.annual_premium}}</p>
+    {{/each}}
+</div>
+</section>
+{{/each}}
