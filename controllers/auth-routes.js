@@ -12,6 +12,7 @@ router.post('/register', (req, res)  => {
   PolicyOwner.create({
     first_name: req.body.first_name,
     last_name: req.body.last_name,
+    email: req.body.email,
     username: req.body.username,
     password: req.body.password
   })

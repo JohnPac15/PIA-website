@@ -5,6 +5,7 @@ const userdata = [
   {
     first_name: 'Robert',
     last_name: 'Clarady',
+    email: 'robert@pia.com',
     username: 'robert',
     password: 'password123',
     policy_owner: false,
@@ -14,6 +15,7 @@ const userdata = [
     first_name: 'Tom',
     last_name: 'Thumb',
     username: 'tom',
+    email: 'tom@pia.com',
     password: 'password123',
     policy_owner: true,
     admin: false
