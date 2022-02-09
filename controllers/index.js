@@ -8,4 +8,6 @@ router.use('/api', apiRoutes);
 router.use('/', authRoutes);
 router.use('/', homeRoutes);
 
+
+
 module.exports = router;
