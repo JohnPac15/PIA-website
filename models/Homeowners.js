@@ -14,7 +14,7 @@ Homeowners.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        aunnal_premiun:{
+        annual_premium:{
             type: DataTypes.INTEGER,
             allowNull: false
         },
@@ -23,7 +23,7 @@ Homeowners.init(
             allowNull: false
         },
         expiration_date:{
-            type: DataTypes.DATE(6),
+            type: DataTypes.DATE,
             allowNull: false
         },
         property_address:{ 

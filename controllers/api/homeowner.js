@@ -17,7 +17,7 @@ router.get('/', (req,res) =>{
 router.post('/', (req, res) => {
     Homeowners.create({
         company_name: req.body.company_name,
-        aunnal_premiun: req.body.aunnal_premiun,
+        annual_premium: req.body.annual_premium,
         policy_number: req.body.policy_number,
         expiration_date: req.body.expiration_date,
         property_address: req.body.property_address,

@@ -18,7 +18,7 @@ router.post('/', (req, res) => {
     console.log('whats up')
     Auto.create({
         company_name: req.body.company_name,
-        aunnal_premiun: req.body.aunnal_premiun,
+        annual_premium: req.body.annual_premium,
         policy_number: req.body.policy_number,
         expiration_date: req.body.expiration_date,
         vehicle: req.body.vehicle,
