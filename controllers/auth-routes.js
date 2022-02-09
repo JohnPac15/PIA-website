@@ -1,7 +1,15 @@
 const router = require('express').Router();
+const validator = require('validator');
 const { PolicyOwner } = require('../models');
 
 router.post('/register', (req, res)  => {
+      
+  const emailCheck = validator.isEmail(req.body.email);
+  if (!emailCheck) {
+    res.status(400).json({ message: 'Please enter a valid email!' });
+    res.render('/register')
+  }
+
   PolicyOwner.findOne({
     where: {
      username: req.body.username
@@ -12,6 +20,7 @@ router.post('/register', (req, res)  => {
   PolicyOwner.create({
     first_name: req.body.first_name,
     last_name: req.body.last_name,
+    email: req.body.email,
     username: req.body.username,
     password: req.body.password
   })
@@ -42,14 +51,14 @@ router.post('/login', (req, res) => {
     }
   }).then(dbUserData => {
     if (!dbUserData) {
-      res.status(400).json({ message: 'No user with that username!' });
+      res.status(400).json({ message: 'Incoorect username or password!' });
       return;
     }
 
     const validPassword = dbUserData.checkPassword(req.body.password);
 
     if (!validPassword) {
-      res.status(400).json({ message: 'Incorrect password!' });
+      res.status(400).json({ message: 'Incorrect username or password!' });
       return;
     }
 

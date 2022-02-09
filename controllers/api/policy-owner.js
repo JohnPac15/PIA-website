@@ -3,6 +3,7 @@ const {PolicyOwner, Homeowners, Auto} = require('../../models');
 
 router.get('/', (req, res) => {
     PolicyOwner.findAll({
+      attributes: { exclude: ['password'] },
       include: [
         {
           model: Homeowners
@@ -20,24 +21,10 @@ router.get('/', (req, res) => {
       });
 })
 
-router.post('/', (req, res) => {
-    PolicyOwner.create({
-        first_name: req.body.first_name,
-        last_name: req.body.last_name,
-        username: req.body.username,
-        password: req.body.password
-    })
-    .then((dbUserData) => res.json(dbUserData))
-    .catch((err) => {
-      console.log(err);
-      res.status(500).json(err);
-    });
-})
-
-router.get('/:id', (req, res) => {
+router.get('/:username', (req, res) => {
   PolicyOwner.findOne({
     where:{
-      id: req.params.id
+      username: req.session.username
   }
 })
 .then(dbPolicyOwnerData => {

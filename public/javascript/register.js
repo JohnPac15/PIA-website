@@ -3,26 +3,27 @@ async function signupFormHandler(event) {
   
     const first_name = document.querySelector('#firstname-register').value.trim();
     const last_name = document.querySelector('#lastname-register').value.trim();
+    const email = document.querySelector('#email-register').value.trim();
     const username = document.querySelector('#username-register').value.trim();
     const password = document.querySelector('#password-register').value.trim();
-    const policy_owner = document.querySelector('#policyowner-register').value.trim();
-  
-    if (first_name && last_name && username && password) {
-      const response = await fetch('/api/users', {
+
+    if (first_name && last_name && email && username && password) {
+      
+      const response = await fetch('/register', {
         method: 'post',
         body: JSON.stringify({
           first_name,
           last_name,
+          email,
           username,
           password,
-          policy_owner
         }),
         headers: { 'Content-Type': 'application/json' }
       });
    
       // check the response status
       if (response.ok) {
-        console.log('success');
+        document.location.replace('/');
       } else {
         alert(response.statusText);
       }
