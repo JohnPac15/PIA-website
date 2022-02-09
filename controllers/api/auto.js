@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const {PolicyOwner, Policies, Homeowners, Auto} = require('../../models');
+const {PolicyOwner, Homeowners, Auto} = require('../../models');
 
 router.get('/', (req, res) => {
     Auto.findAll({

@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const {PolicyOwner, Policies, Homeowners, Auto} = require('../../models');
+const {PolicyOwner, Homeowners, Auto} = require('../../models');
 
 router.get('/', (req,res) =>{
     Homeowners.findAll({
@@ -57,9 +57,6 @@ router.delete('/:id', (req, res) => {
         where:{
             id: req.params.id
         },
-        include:{
-            model: PolicyOwner
-        }
     })
     .then(dbHomeownerData => {
         if (!dbHomeownerData) {

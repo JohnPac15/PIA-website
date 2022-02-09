@@ -33,7 +33,7 @@ Auto.init(
         owner_id:{
             type: DataTypes.INTEGER,
             references: {
-                model: 'policy_owner',
+                model: "policy_owner",
                 key: 'id'
             }
         },
@@ -47,4 +47,4 @@ Auto.init(
     }
 )
 
-module.exports = Auto
+module.exports = Auto;
