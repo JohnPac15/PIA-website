@@ -81,25 +81,4 @@ router.get("/admin", authHelpers.adminRequired, (req, res) => {
   })
 });
 
-router.post("/add/auto", (req, res) => {
-  
-  req.session.save(() => {
-    req.session.auto = true;
-    req.session.homeowner = false;
-  });  
-  console.log('click in get2', req.session.auto);
-  res.render("admin", {
-    auto: req.session.auto,
-    homeowner: req.session.homeowner
-  });
-})
-
-router.post("/add/homeowner", authHelpers.adminRequired, (req, res) => {
-  req.session.save(() => {
-    req.session.auto = false;
-    req.session.homeowner = true;
-  });  
-  console.log('click in get');
-  return res.status(204).end();
-})
 module.exports = router;

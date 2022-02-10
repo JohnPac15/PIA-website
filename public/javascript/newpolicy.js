@@ -33,21 +33,30 @@ async function autoFormHandler(event) {
 async function homeownerFormHandler(event) {
   event.preventDefault();
 
-  const email = document.querySelector('#email-login').value.trim();
-  const password = document.querySelector('#password-login').value.trim();
+  const owner_id = document.querySelector('#owner-id').value.trim();
+  const company_name = document.querySelector('#company-home').value.trim();
+  const annual_premium = document.querySelector('#premium-home').value.trim();
+  const policy_number = document.querySelector('#policy-home').value.trim();
+  const expiration_date = document.querySelector('#exp-date-home').value.trim();
+  const property_address = document.querySelector('#address-home').value.trim();
 
-  if (email && password) {
-    const response = await fetch('/api/homeowner', {
+  if (owner_id && company_name && annual_premium && policy_number && expiration_date && property_address) {
+    const response = await fetch('/api/homeowners', {
       method: 'post',
       body: JSON.stringify({
-        email,
-        password
+        owner_id,
+        company_name,
+        annual_premium,
+        policy_number,
+        expiration_date,
+        property_address
       }),
       headers: { 'Content-Type': 'application/json' }
     });
 
+
     if (response.ok) {
-      document.location.replace('/dashboard');
+      document.location.replace('/admin');
     } else {
       alert(response.statusText);
     }
