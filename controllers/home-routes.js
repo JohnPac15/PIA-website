@@ -54,10 +54,7 @@ router.get("/dashboard", authHelpers.loginRequired, (req, res) => {
 
   })
   .then(dbPolicyData => {
-    const user = dbPolicyData.get({ plain: true })
-    
-    console.log(user)
-    
+    const user = dbPolicyData.get({ plain: true })  
     res.render("dashboard", {user,
       loggedIn: req.session.loggedIn,
       admin: req.session.admin,
@@ -83,7 +80,6 @@ router.get("/admin", authHelpers.adminRequired, (req, res) => {
   })
   .then(dbPolicyOwnerData => {
     const user = dbPolicyOwnerData.map(policy_owner => policy_owner.get({ plain: true }));
-    console.log(user);
     res.render("admin", {user,
       loggedIn: req.session.loggedIn,
       admin: req.session.admin,
