@@ -9,3 +9,7 @@ body::before {
     width: 10rem;
     object-fit: cover;
 }
+
+#logo{
+    size: 20px;
+}
