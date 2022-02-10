@@ -18,6 +18,7 @@ router.get("/login", (req, res) => {
       admin: req.session.admin,
       user_id: req.session.user_id
     });
+
     return;
   }
 
@@ -66,11 +67,29 @@ router.get("/dashboard", authHelpers.loginRequired, (req, res) => {
 });
 
 router.get("/admin", authHelpers.adminRequired, (req, res) => {
-  res.render("admin", {
-    loggedIn: req.session.loggedIn,
-    admin: req.session.admin,
-    user_id: req.session.user_id
-  });
+  PolicyOwner.findAll({
+    where: {
+      policy_owner: true
+    },
+    include: [
+      {
+        model: Homeowners
+      },
+      {
+        model: Auto
+      }
+    ]
+
+  })
+  .then(dbPolicyOwnerData => {
+    const user = dbPolicyOwnerData.map(policy_owner => policy_owner.get({ plain: true }));
+    console.log(user);
+    res.render("admin", {user,
+      loggedIn: req.session.loggedIn,
+      admin: req.session.admin,
+      user_id: req.session.user_id
+    });
+  })
 });
 
 module.exports = router;
