@@ -33,8 +33,5 @@
     "passport-local": "^1.0.0",
     "sequelize": "^6.15.1",
     "validator": "^13.7.0"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.15"
   }
 }
