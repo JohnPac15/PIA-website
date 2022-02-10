@@ -40,7 +40,22 @@ router.get('/:username', (req, res) => {
   });
 })
 
-router.put('/edit:id')
+router.post('/', (req, res) => {
+  PolicyOwner.create({
+    first_name: req.body.first_name,
+    last_name: req.body.last_name,
+    email: req.body.email,
+    username: req.body.username,
+    password: req.body.password,
+    policy_owner: req.body.policy_owner,
+    admin: req.body.admin
+  })
+  .then(dbPolicyOwnerData => res.json(dbPolicyOwnerData))
+  .catch((err) => {
+    console.log(err);
+    res.status(500).json(err);
+  });
+})
 
 router.delete('/:id', (req, res) => {
   PolicyOwner.destroy({
