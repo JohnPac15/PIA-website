@@ -4,7 +4,7 @@
     <section>
       <h2>Add New Auto Policy</h2>
         <form class="new-auto-form">
-          <input type="number" name="" id="owner-id" class="form-control my-4 py-2" placeholder="Customer ID">
+          <input type="number" name="" id="owner-id-auto" class="form-control my-4 py-2" placeholder="Customer ID">
           <input type="text" name="" id="company-auto" class="form-control my-4 py-2" placeholder="Company Name">
           <input type="number" name="" id="premium-auto" class="form-control my-4 py-2" placeholder="Annual Premium">
           <input type="number" name="" id="policy-auto" class="form-control my-4 py-2" placeholder="Policy Number">
@@ -18,7 +18,7 @@
     <section>
       <h2>Add New Homeowner Policy</h2>
         <form class="new-homeowner-form">
-          <input type="number" name="" id="owner-id" class="form-control my-4 py-2" placeholder="Customer ID">
+          <input type="number" name="" id="owner-id-home" class="form-control my-4 py-2" placeholder="Customer ID">
           <input type="text" name="" id="company-home" class="form-control my-4 py-2" placeholder="Company Name">
           <input type="number" name="" id="premium-home" class="form-control my-4 py-2" placeholder="Annual Premium">
           <input type="number" name="" id="policy-home" class="form-control my-4 py-2" placeholder="Policy Number">
@@ -42,6 +42,10 @@
             </div>
 
             {{#each homeowners_policies as |home|}}
+              <li class="list-group-item list-group-item-primary">Policy ID:
+                <span
+                  class="text-dark fst-italic"
+                >{{id}}</span></li>
               <li class="list-group-item list-group-item-light">Property
                 address:
                 <span
@@ -74,6 +78,10 @@
             </div>
 
             {{#each auto_policies as |auto|}}
+              <li class="list-group-item list-group-item-primary">Policy ID:
+                <span
+                  class="text-dark fst-italic"
+                >{{id}}</span></li>
               <li class="list-group-item list-group-item-light">Your auto policy
                 is with:
                 <span
