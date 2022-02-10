@@ -61,6 +61,11 @@
                   <li class="nav-item">
                     <a href="/edit/{{user_id}}" id="logout" class="nav-link">Edit Profile</a>
                   </li>
+                   {{#if admin}}
+                  <li class="nav-item">
+                    <a href="/admin" id="admin" class="nav-link">Agents</a>
+                  </li>
+                  {{/if}}
                 {{else}}
                   <li class="nav-item">
                     <a href="/login" class="nav-link">LogIn</a>

@@ -4,12 +4,20 @@ const authHelpers = require("../auth/_helpers");
 
 router.get("/", (req, res) => {
   console.log(req.session);
-  res.render("homepage", { loggedIn: req.session.loggedIn, user_id: req.session.user_id});
-});
+  res.render("homepage", {
+    loggedIn: req.session.loggedIn,
+    admin: req.session.admin,
+    user_id: req.session.user_id
+  });
+})
 
 router.get("/login", (req, res) => {
   if (req.session.loggedIn) {
-    res.render("dashboard", { loggedIn: req.session.loggedIn, user_id: req.session.user_id});
+    res.render("dashboard", {
+      loggedIn: req.session.loggedIn,
+      admin: req.session.admin,
+      user_id: req.session.user_id
+    });
     return;
   }
 
@@ -18,7 +26,11 @@ router.get("/login", (req, res) => {
 
 router.get("/register", (req, res) => {
   if (req.session.loggedIn) {
-    res.render("dashboard", { loggedIn: req.session.loggedIn, user_id: req.session.user_id});
+    res.render("dashboard",  {
+      loggedIn: req.session.loggedIn,
+      admin: req.session.admin,
+      user_id: req.session.user_id
+    });
     return;
   }
 
