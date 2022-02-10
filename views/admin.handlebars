@@ -1,8 +1,21 @@
 <section class="p-5 min-vh-100">
   <div class="container">
     <h1 class="text-center">The Agents</h1>
+    <form class="auto">
+      <button type="submit" class="btn btn-warning my-3">New Auto</button><br>
+    </form>
+    <form class="homeowner">
+    <button type="submit" class="btn btn-warning my-3">New Homeowner</button><br>
+    </form>
+    {{#if auto }}
+      {{ newauto }}
+    {{/if}}    
+    {{#if homeowner }}
+      {{ newhomeowner }}
+    {{/if}}
+
     {{#each user}}
-      <h3 class="mt-5">{{last_name}}, {{first_name}}</h3>
+      <h3 class="mt-5">Customer {{id}}: {{last_name}}, {{first_name}}</h3>
       <div
         class="row d-flex align-items-center justify-content-between g-4 mt-1"
       >
@@ -24,7 +37,7 @@
                 <span
                   class="text-dark fst-italic"
                 >{{home.company_name}}</span></li>
-              <li class="list-group-item list-group-item-light">Your premium is:
+              <li class="list-group-item list-group-item-light">Your premium is: $
                 <span
                   class="text-dark fst-italic"
                 >{{home.annual_premium}}</span></li>
@@ -54,7 +67,7 @@
               <li class="list-group-item list-group-item-light">Vehicle on
                 policy is:
                 <span class="text-dark fst-italic">{{auto.vehicle}}</span></li>
-              <li class="list-group-item list-group-item-light">Your premium is:
+              <li class="list-group-item list-group-item-light">Your premium is: $
                 <span
                   class="text-dark fst-italic"
                 >{{auto.annual_premium}}</span></li>
@@ -71,3 +84,4 @@
     {{/each}}
   </div>
 </section>
+<script src="/javascript/newpolicy.js"></script>

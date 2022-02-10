@@ -83,4 +83,19 @@ router.get("/admin", authHelpers.adminRequired, (req, res) => {
   })
 });
 
+router.get("/add/auto", (req, res) => {
+
+  res.render("newauto", {
+    auto: true,
+    homeowner: false
+  });
+})
+
+router.post("/add/homeowner", authHelpers.adminRequired, (req, res) => {
+
+  res.render("admin", {
+    auto: false,
+    homeowner: true
+  });
+})
 module.exports = router;
