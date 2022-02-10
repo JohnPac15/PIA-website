@@ -47,10 +47,7 @@ router.get("/dashboard", authHelpers.loginRequired, (req, res) => {
 
   })
   .then(dbPolicyData => {
-    const user = dbPolicyData.get({ plain: true })
-    
-    console.log(user)
-    
+    const user = dbPolicyData.get({ plain: true })  
     res.render("dashboard", {user,
       loggedIn: req.session.loggedIn,
       admin: req.session.admin,
@@ -75,27 +72,34 @@ router.get("/admin", authHelpers.adminRequired, (req, res) => {
   })
   .then(dbPolicyOwnerData => {
     const user = dbPolicyOwnerData.map(policy_owner => policy_owner.get({ plain: true }));
-    console.log(user);
     res.render("admin", {user,
       loggedIn: req.session.loggedIn,
       admin: req.session.admin,
+      auto: req.session.auto,
+      homeowner: req.session.homeowner
     });
   })
 });
 
-router.get("/add/auto", (req, res) => {
-
-  res.render("newauto", {
-    auto: true,
-    homeowner: false
+router.post("/add/auto", (req, res) => {
+  
+  req.session.save(() => {
+    req.session.auto = true;
+    req.session.homeowner = false;
+  });  
+  console.log('click in get2', req.session.auto);
+  res.render("admin", {
+    auto: req.session.auto,
+    homeowner: req.session.homeowner
   });
 })
 
 router.post("/add/homeowner", authHelpers.adminRequired, (req, res) => {
-
-  res.render("admin", {
-    auto: false,
-    homeowner: true
-  });
+  req.session.save(() => {
+    req.session.auto = false;
+    req.session.homeowner = true;
+  });  
+  console.log('click in get');
+  return res.status(204).end();
 })
 module.exports = router;
