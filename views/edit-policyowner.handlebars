@@ -1,0 +1,28 @@
+<section class="p-5 min-vh-100">
+    <div class="container mt-5 pt-5">
+        <div class="row text-center">
+            <div class="col-12 col-sm-8 col-md-6 m-auto">
+                <div class="card border-0 shadow bg-white">
+                    <div class="card-body">
+                        <div class="h1">
+                           <i class="bi bi-people"></i>  <span class="h3">Current Owner Information</span> 
+                        </div>
+                        <form class="update-information-form">
+                            <p class="form-control my-4 py-2">First name: {{user.first_name}}</p> 
+                            <input type="text" name="" id="firstname-register" class="form-control my-4 py-2" value ={{user.first_name}}>
+                            <p class="form-control my-4 py-2">Last name: {{user.last_name}}</p> 
+                            <input type="text" name="" id="lastname-register" class="form-control my-4 py-2" value ={{user.last_name}}>
+                            <p class="form-control my-4 py-2">Username: {{user.username}}</p> 
+                            <input type="text" name="" id="username-register" class="form-control my-4 py-2" value ={{user.username}}>
+                            <p class="form-control my-4 py-2">Email on file: {{user.email}}</p>
+                            <input type="text" name="" id="email-register" class="form-control my-4 py-2" value ={{user.email}}>
+                             <div class="text-center mt-3">
+                                <button type="submit" class="btn btn-warning my-3">Update</button><br>
+                            </div> 
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+<script src="/javascript/update.js"></script>

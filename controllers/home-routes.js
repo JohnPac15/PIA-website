@@ -6,14 +6,19 @@ router.get("/", (req, res) => {
   console.log(req.session);
   res.render("homepage", {
     loggedIn: req.session.loggedIn,
-    admin: req.session.admin});
-});
+    admin: req.session.admin,
+    user_id: req.session.user_id
+  });
+})
 
 router.get("/login", (req, res) => {
   if (req.session.loggedIn) {
     res.render("dashboard", {
       loggedIn: req.session.loggedIn,
-      admin: req.session.admin});
+      admin: req.session.admin,
+      user_id: req.session.user_id
+    });
+
     return;
   }
 
@@ -22,9 +27,11 @@ router.get("/login", (req, res) => {
 
 router.get("/register", (req, res) => {
   if (req.session.loggedIn) {
-    res.render("dashboard", {
+    res.render("dashboard",  {
       loggedIn: req.session.loggedIn,
-      admin: req.session.admin});
+      admin: req.session.admin,
+      user_id: req.session.user_id
+    });
     return;
   }
 
@@ -54,6 +61,7 @@ router.get("/dashboard", authHelpers.loginRequired, (req, res) => {
     res.render("dashboard", {user,
       loggedIn: req.session.loggedIn,
       admin: req.session.admin,
+      user_id: req.session.user_id
     });
   })
 });
@@ -79,6 +87,7 @@ router.get("/admin", authHelpers.adminRequired, (req, res) => {
     res.render("admin", {user,
       loggedIn: req.session.loggedIn,
       admin: req.session.admin,
+      user_id: req.session.user_id
     });
   })
 });
