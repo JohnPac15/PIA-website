@@ -58,7 +58,10 @@
                   <li class="nav-item">
                     <a href="/logout" id="logout" class="nav-link">Logout</a>
                   </li>
-                  {{#if admin}}
+                  <li class="nav-item">
+                    <a href="/edit/{{user_id}}" id="logout" class="nav-link">Edit Profile</a>
+                  </li>
+                   {{#if admin}}
                   <li class="nav-item">
                     <a href="/admin" id="admin" class="nav-link">Agents</a>
                   </li>

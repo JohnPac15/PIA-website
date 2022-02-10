@@ -15,6 +15,7 @@ router.get('/', (req,res) =>{
 })
 
 router.post('/', (req, res) => {
+    console.log('post click')
     Homeowners.create({
         company_name: req.body.company_name,
         annual_premium: req.body.annual_premium,

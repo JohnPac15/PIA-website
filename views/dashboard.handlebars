@@ -3,7 +3,7 @@
     <h3>Welcome {{user.first_name}} to your account!</h3>
     <p class="fst-italics text-primary">Down below you will see a list of your
       property and auto list policies</p>
-    <div class="row d-flex align-items-center justify-content-between g-4 mt-5">
+    <div class="row d-flex align-items-top justify-content-between g-4 mt-5">
       <div class="col-md">
         <ul class="list-group w-100">
           <div class="title-section h1">
@@ -12,6 +12,10 @@
           </div>
 
           {{#each user.homeowners_policies as |home|}}
+          <li class="list-group-item list-group-item-primary">Policy ID:
+                <span
+                  class="text-dark fst-italic"
+                >{{id}}</span></li>
             <li class="list-group-item list-group-item-light">Property address:
               <span
                 class="text-dark fst-italic"
@@ -24,13 +28,13 @@
             <li class="list-group-item list-group-item-light">Your premium is:
               <span
                 class="text-dark fst-italic"
-              >{{home.aunnal_premiun}}</span></li>
+              >${{home.annual_premium}}</span></li>
             <li
               class="list-group-item list-group-item-light text-decoration-underline"
             >Your policy will expire on:
               <span
                 class="text-danger fst-italic"
-              >{{home.expiration_date}}</span></li>
+              >{{format_date home.expiration_date}}</span></li>
 
           {{/each}}
 
@@ -44,6 +48,10 @@
           </div>
 
           {{#each user.auto_policies as |auto|}}
+          <li class="list-group-item list-group-item-primary">Policy ID:
+                <span
+                  class="text-dark fst-italic"
+                >{{id}}</span></li>
             <li class="list-group-item list-group-item-light">Your auto policy
               is with:
               <span
@@ -55,13 +63,13 @@
             <li class="list-group-item list-group-item-light">Your premium is:
               <span
                 class="text-dark fst-italic"
-              >{{auto.aunnal_premiun}}</span></li>
+              >${{auto.annual_premium}}</span></li>
             <li
               class="list-group-item list-group-item-light text-decoration-underline"
             >Your auto pilocy will expire on:
               <span
                 class="text-danger fst-italic"
-              >{{auto.expiration_date}}</span></li>
+              >{{format_date auto.expiration_date}}</span></li>
           {{/each}}
         </ul>
       </div>

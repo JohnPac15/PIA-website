@@ -3,3 +3,9 @@ body::before {
     content: '';
     height: 60px;
 }
+
+#team img {
+    height: 10rem;
+    width: 10rem;
+    object-fit: cover;
+}

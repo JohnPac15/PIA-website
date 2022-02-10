@@ -1,0 +1,56 @@
+<section class="p-5 min-vh-100">
+    <div class="container mt-3 pt-5">
+        <div class="row ">
+            <div class="col-12 col-sm-8 col-md-6 m-auto">
+                <div class="card border-0 shadow bg-white">
+                    <div class="card-body">
+                        <div class="h1 text-center">
+                            <i class="bi bi-people"></i> <span class="h3">Current Owner Information</span>
+                        </div>
+                        <ul class="list-group list-group-flush p-5 w-75 mx-auto">
+                            <li class="list-group-item">First Name: <span class="fst-italic ps-1">{{user.first_name}}</span></li>
+                            <li class="list-group-item">Last name: <span class="fst-italic ps-1">{{user.last_name}}</span></li>
+                            <li class="list-group-item">Username: <span class="fst-italic ps-1">{{user.username}}</span></li>
+                            <li class="list-group-item">Email on file: <span class="fst-italic ps-1">{{user.email}}</span></li>
+                        </ul>
+                        <div class="d-grid col-6 mx-auto">
+
+                        <button class="btn btn-warning mb-4" data-bs-toggle="modal"
+                            data-bs-target="#update">Update!</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+
+<!-- Modal -->
+<div class="modal fade" id="update" tabindex="-1" aria-labelledby="updateLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="updateLabel">Update Account Information</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form class="update-information-form">                 
+                    <input type="text" name="" id="firstname-register" class="form-control my-4 py-2"
+                        value={{user.first_name}}>
+                   
+                    <input type="text" name="" id="lastname-register" class="form-control my-4 py-2"
+                        value={{user.last_name}} >
+        
+                    <input type="text" name="" id="username-register" class="form-control my-4 py-2"
+                        value={{user.username}}>
+                    <input type="text" name="" id="email-register" class="form-control my-4 py-2" value={{user.email}}>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-warning">Save changes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/javascript/update.js"></script>
