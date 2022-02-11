@@ -48,7 +48,8 @@
                 <div>Policy ID: <span class="text-dark fst-italic">{{id}}</span>
                 </div>
                 <div>
-                  <button value={{id}} class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#update-homeowner{{id}}">Update</button>                  
+                  <button value={{id}} class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#update-homeowner{{id}}">Update</button>   
+                  <button value={{id}} class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#delete-home{{id}}">Delete</button>                
                 </div>
               </li>
               <li class="list-group-item list-group-item-light">Property address:
@@ -81,14 +82,32 @@
                       <input type="text" name="" id="exp-date-homewoner-update" class="form-control my-4 py-2"  value={{expiration_date}}>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button value={{id}} id="delete-home" type="submit" class="delete-home btn btn-warning my-1">Delete</button>
                         <button type="submit" class="btn btn-warning">Save changes</button>
                       </div>
                     </form>
                     </div>
                   </div>
                 </div>
-              </div>             
+              </div>
+              <!-- delete modal -->
+              <div class="modal fade" id="delete-home{{id}}" tabindex="-1" aria-labelledby="updateLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="updateLabel">Delete Policy</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                    <form class="delete-home-form">Are you sure you want to delete the policy?                 
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button value={{id}} id="delete-home" type="submit" class="delete-home btn btn-warning my-1">Delete</button>
+                      </div>                        
+                    </form>
+                    </div>
+                  </div>
+                </div>
+              </div>              
             {{/each}}
           </ul>
         </div>

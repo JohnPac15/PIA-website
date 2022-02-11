@@ -16,20 +16,20 @@ async function autoDeleteHandler(event) {
     
   async function homeownerDeleteHandler(event) {
     event.preventDefault();
-    
     const id = document.querySelector('#delete-home').value.trim();
-
-    const response = await fetch(`/api/homeowners/${id}`, {
-      method: 'delete',
+    console.log('click', id)
+    /*const response = await fetch(`/api/auto/${id}`, {
+      method: 'delete'
     });
   
+      // check the response status
       if (response.ok) {
         document.location.replace('/admin');
       } else {
         alert(response.statusText);
-      }
+      }*/
     }
     
   document.querySelector('.delete-auto').addEventListener('click', autoDeleteHandler);
-  document.querySelector('.delete-home').addEventListener('submit', homeownerDeleteHandler);
+  document.querySelector('.delete-home-form').addEventListener('click', homeownerDeleteHandler);
   
