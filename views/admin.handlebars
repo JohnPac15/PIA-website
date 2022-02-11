@@ -48,8 +48,7 @@
                 <div>Policy ID: <span class="text-dark fst-italic">{{id}}</span>
                 </div>
                 <div>
-                  <button value={{id}} class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#update-homeowner{{id}}">Update</button>   
-                  <button value={{id}} class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#delete-home{{id}}">Delete</button>                
+                  <a href="/edit/home/{{id}}"><button type="button" class="btn btn-warning">Update</button></a>                   
                 </div>
               </li>
               <li class="list-group-item list-group-item-light">Property address:
@@ -63,54 +62,7 @@
               </li>
               <li class="list-group-item list-group-item-light text-decoration-underline">Your policy will expire on:
                 <span class="text-danger fst-italic">{{format_date expiration_date}}</span>
-              </li>
-
-               <!-- Modal -->
-              <div class="modal fade" id="update-homeowner{{id}}" tabindex="-1" aria-labelledby="updateLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="updateLabel">Update Homeowner Information</h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                    <form class="update-homeowner-form">                 
-                      <input type="text" name="" id="id-homewoner-update" class="form-control my-4 py-2" value={{id}}>
-                      <input type="text" name="" id="address-homewoner-update" class="form-control my-4 py-2"  value="{{property_address}}">                   
-                      <input type="text" name="" id="company-homewoner-update" class="form-control my-4 py-2"  value="{{company_name}}">        
-                      <input type="number" name="" id="premium-homewoner-update" class="form-control my-4 py-2" value={{annual_premium}}>
-                      <input type="number" name="" id="policy-homewoner-update" class="form-control my-4 py-2"  value={{policy_number}}>
-                      <input type="text" name="" id="exp-date-homewoner-update" class="form-control my-4 py-2"  value={{expiration_date}}>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-warning">Save changes</button>
-                      </div>
-                    </form>
-                    </div>
-                  </div>
-                </div>
-              </div>
-    
-
-              <!-- delete modal -->
-              <div class="modal fade" id="delete-home{{id}}" tabindex="-1" aria-labelledby="delete-homeLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="delete-homeLabel">Delete Policy</h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                    <form class="delete-home-form">Are you sure you want to delete the policy?                 
-                    <div class="modal-footer">
-                      <button value={{this.id}} id="delete-home" type="button" class="delete-home btn btn-warning my-1">Yes</button>
-                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-                    </div>                        
-                    </form>
-                    </div>
-                  </div>
-                </div>
-              </div>              
+              </li>              
             {{/each}}
           </ul>
         </div>
@@ -127,7 +79,7 @@
                   <span class="text-dark fst-italic">{{id}}</span>
                 </div>
                 <div>
-                  <button value={{id}} class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#update-auto{{id}}">Update</button>
+                  <a href="/edit/auto/{{id}}"><button type="button" class="btn btn-warning">Update</button></a>                   
                 </div>
               </li>
               <li class="list-group-item list-group-item-light">Your auto policy is with:
@@ -141,33 +93,7 @@
               </li>
               <li class="list-group-item list-group-item-light text-decoration-underline">Your auto policy will expire on:
                 <span class="text-danger fst-italic">{{format_date auto.expiration_date}}</span>
-              </li> 
-              <!-- Modal -->
-              <div class="modal fade" id="update-auto{{id}}" tabindex="-1" aria-labelledby="updateLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="updateLabel">Update Auto Information</h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                    <form class="update-auto-form">                 
-                      <input type="text" name="" id="id-auto-update" class="form-control my-4 py-2" value={{id}}>
-                      <input type="text" name="" id="vehicle-auto-update" class="form-control my-4 py-2"  value="{{vehicle}}">                   
-                      <input type="text" name="" id="company-auto-update" class="form-control my-4 py-2"  value="{{company_name}}">        
-                      <input type="number" name="" id="premium-auto-update" class="form-control my-4 py-2" value={{annual_premium}}>
-                      <input type="number" name="" id="policy-auto-update" class="form-control my-4 py-2"  value={{policy_number}}>
-                      <input type="text" name="" id="exp-date-auto-update" class="form-control my-4 py-2"  value={{expiration_date}}>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="delete-auto btn btn-warning my-1" value={{id}}>Delete</button>
-                        <button type="submit" class="btn btn-warning">Save changes</button>
-                      </div>
-                    </form>
-                    </div>
-                  </div>
-                </div>
-              </div>      
+              </li>   
             {{/each}}            
           </ul>
         </div>
@@ -176,5 +102,4 @@
   </div>
 </section>
 <script src="/javascript/newpolicy.js"></script>
-<script src="/javascript/updatepolicy.js"></script>
-<script src="/javascript/deletepolicy.js"></script>
+

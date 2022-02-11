@@ -1,0 +1,32 @@
+<section class="p-5 min-vh-100">
+    <div class="container mt-3 pt-5">
+        <div class="row ">
+            <div class="col-12 col-sm-8 col-md-6 m-auto">
+                <div class="card border-0 shadow bg-white">
+                    <div class="card-body">
+                        <div class="h1 text-center">
+                            <i class="bi bi-people"></i> <span class="h3">Update Auto Policy Information</span>
+                        </div>
+                        <form class="update-homeowner-form">                 
+                          Policy ID:<input type="text" name="" id="id-auto-update" class="form-control my-1 py-1" value={{user.id}}>
+                          Vehicle: <input type="text" name="" id="vehicle-update" class="form-control my-1 py-1"  value="{{user.vehicle}}">                  
+                          Company:<input type="text" name="" id="company-auto-update" class="form-control my-1 py-1"  value="{{user.company_name}}">        
+                          Premium:<input type="number" name="" id="premium-auto-update" class="form-control my-1 py-1" value={{user.annual_premium}}>
+                          Policy #:<input type="number" name="" id="policy-auto-update" class="form-control my-1 py-1"  value={{user.policy_number}}>
+                          Exp Date:<input type="text" name="" id="exp-date-auto-update" class="form-control my-1 py-1"  value={{user.expiration_date}}>
+                          <div>
+                            <div class ="d-flex align-items-center justify-content-center">
+                              <a href="/admin"><button type="button" class="btn btn-primary m-2 p-2">Return</button></a>
+                              <button type="button" class="btn btn-warning my-1 py-1">Save changes</button>
+                            </div>
+                          </div>
+                        </form>
+                    </div>
+                    <form class="delete-policy d-flex align-items-top justify-content-center">
+                      <button type="button" class="delete-btn btn btn-danger">Delete</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+</section>
+<script src="/javascript/autopolicy.js"></script>
