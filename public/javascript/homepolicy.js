@@ -7,8 +7,8 @@ async function homeownerUpdateFormHandler(event) {
   const policy_number = document.querySelector('#policy-homewoner-update').value.trim();
   const expiration_date = document.querySelector('#exp-date-homewoner-update').value.trim();
   const property_address = document.querySelector('#address-homewoner-update').value.trim();
-  console.log('click', id)
- /* const response = await fetch(`/api/homeowners/${id}`, {
+ 
+  const response = await fetch(`/api/homeowners/${id}`, {
     method: 'put',
     body: JSON.stringify({
       id,
@@ -25,14 +25,13 @@ async function homeownerUpdateFormHandler(event) {
     document.location.replace('/admin');
   } else {
     alert(response.statusText);
-  } */
+  } 
 }
 
     async function homeDeleteHandler(event) {
       event.preventDefault();
       const id = document.querySelector('#id-homewoner-update').value.trim();
-      console.log('click', id)
-      /*const response = await fetch(`/api/auto/${id}`, {
+      const response = await fetch(`/api/homeowners/${id}`, {
         method: 'delete'
       });
     
@@ -41,7 +40,7 @@ async function homeownerUpdateFormHandler(event) {
           document.location.replace('/admin');
         } else {
           alert(response.statusText);
-        }*/
+        }
       }
    
   document.querySelector('.delete-policy').addEventListener('click', homeDeleteHandler);

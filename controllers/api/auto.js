@@ -15,6 +15,7 @@ router.get('/', (req, res) => {
 })
 
 router.put('/:id', (req, res) => {
+    console.log(req.body)
     Auto.update(req.body, {
         individualHooks: true,
         where:{ id: req.body.id}

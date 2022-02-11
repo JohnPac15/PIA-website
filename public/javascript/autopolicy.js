@@ -6,8 +6,8 @@ async function homeownerUpdateFormHandler(event) {
   const policy_number = document.querySelector('#policy-auto-update').value.trim();
   const expiration_date = document.querySelector('#exp-date-auto-update').value.trim();
   const vehicle = document.querySelector('#vehicle-update').value.trim();
-
- const response = await fetch(`/api/homeowners/${id}`, {
+console.log (id, company_name, annual_premium, policy_number, expiration_date, vehicle)
+ const response = await fetch(`/api/auto/${id}`, {
     method: 'put',
     body: JSON.stringify({
       id,
@@ -29,9 +29,8 @@ async function homeownerUpdateFormHandler(event) {
 
     async function homeDeleteHandler(event) {
       event.preventDefault();
-      const id = document.querySelector('#id-homewoner-update').value.trim();
-      console.log('click', id)
-      /*const response = await fetch(`/api/auto/${id}`, {
+      const id = document.querySelector('#id-auto-update').value.trim();
+      const response = await fetch(`/api/auto/${id}`, {
         method: 'delete'
       });
     
@@ -40,8 +39,8 @@ async function homeownerUpdateFormHandler(event) {
           document.location.replace('/admin');
         } else {
           alert(response.statusText);
-        }*/
+        }
       }
    
   document.querySelector('.delete-policy').addEventListener('click', homeDeleteHandler);
-  document.querySelector('.update-homeowner-form').addEventListener('click', homeownerUpdateFormHandler);
+  document.querySelector('.update-homeowner-form').addEventListener('submit', homeownerUpdateFormHandler);
