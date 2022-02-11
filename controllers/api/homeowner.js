@@ -31,6 +31,18 @@ router.post('/', (req, res) => {
     });
 })
 
+router.put('/:id', (req, res) => {
+    Homeowners.update(req.body, {
+        individualHooks: true,
+        where:{ id: req.body.id}
+    })
+    .then((dbHomeownerData) => res.json(dbHomeownerData))
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+})
+
 router.get('/:id', (req, res) => {
     Homeowners.findOne({
         where:{
