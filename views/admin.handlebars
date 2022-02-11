@@ -98,10 +98,10 @@
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                    <form class="delete-home-form">Are you sure you want to delete the policy?                 
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button value={{id}} id="delete-home" type="submit" class="delete-home btn btn-warning my-1">Delete</button>
+                    <form class="delete-home-form">Are you sure you want to delete the policy #{{id}}?           
+                      <div class="modal-footer">
+                        <button value={{id}} id="delete-home-form" type="button" class="delete-home-form btn btn-warning my-1">Yes</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>                       
                       </div>                        
                     </form>
                     </div>
@@ -144,7 +144,7 @@
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h5 class="modal-title" id="updateLabel">Update Homeowner Information</h5>
+                      <h5 class="modal-title" id="updateLabel">Update Auto Information</h5>
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
