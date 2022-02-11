@@ -64,6 +64,7 @@
               <li class="list-group-item list-group-item-light text-decoration-underline">Your policy will expire on:
                 <span class="text-danger fst-italic">{{format_date expiration_date}}</span>
               </li>
+
                <!-- Modal -->
               <div class="modal fade" id="update-homeowner{{id}}" tabindex="-1" aria-labelledby="updateLabel" aria-hidden="true">
                 <div class="modal-dialog">
@@ -89,20 +90,22 @@
                   </div>
                 </div>
               </div>
+    
+
               <!-- delete modal -->
-              <div class="modal fade" id="delete-home{{id}}" tabindex="-1" aria-labelledby="updateLabel" aria-hidden="true">
+              <div class="modal fade" id="delete-home{{this.id}}" tabindex="-1" aria-labelledby="delete-homeLabel" aria-hidden="true">
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h5 class="modal-title" id="updateLabel">Delete Policy</h5>
+                      <h5 class="modal-title" id="delete-homeLabel">Delete Policy</h5>
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                     <form class="delete-home-form">Are you sure you want to delete the policy?                 
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button value={{id}} id="delete-home" type="submit" class="delete-home btn btn-warning my-1">Delete</button>
-                      </div>                        
+                        <button value={{this.id}} id="delete-home" type="submit" class="delete-home btn btn-warning my-1">Delete</button>
+                    </div>                        
                     </form>
                     </div>
                   </div>
