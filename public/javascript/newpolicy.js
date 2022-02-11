@@ -1,5 +1,6 @@
 async function autoFormHandler(event) {
   event.preventDefault();
+  
   const owner_id = document.querySelector('#owner-id-auto').value.trim();
   const company_name = document.querySelector('#company-auto').value.trim();
   const annual_premium = document.querySelector('#premium-auto').value.trim();
@@ -32,14 +33,14 @@ async function autoFormHandler(event) {
   
 async function homeownerFormHandler(event) {
   event.preventDefault();
-  console.log('click')
+
   const owner_id = document.querySelector('#owner-id-home').value.trim();
   const company_name = document.querySelector('#company-home').value.trim();
   const annual_premium = document.querySelector('#premium-home').value.trim();
   const policy_number = document.querySelector('#policy-home').value.trim();
   const expiration_date = document.querySelector('#exp-date-home').value.trim();
   const property_address = document.querySelector('#address-home').value.trim();
-  console.log (owner_id, company_name, annual_premium, policy_number, expiration_date, property_address)
+
   if (owner_id && company_name && annual_premium && policy_number && expiration_date && property_address) {
 
     const response = await fetch('/api/homeowners', {

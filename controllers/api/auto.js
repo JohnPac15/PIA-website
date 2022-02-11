@@ -14,6 +14,19 @@ router.get('/', (req, res) => {
       });
 })
 
+router.put('/:id', (req, res) => {
+    console.log(req.body)
+    Auto.update(req.body, {
+        individualHooks: true,
+        where:{ id: req.body.id}
+    })
+    .then((dbAutoData) => res.json(dbAutoData))
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+})
+
 router.post('/', (req, res) => {
     console.log('whats up')
     Auto.create({
@@ -31,7 +44,7 @@ router.post('/', (req, res) => {
       });
 })
 
-router.get('/:id', (res, req) => {
+router.get('/:id', (req, res) => {
     Auto.findOne({
         where:{
             id: req.params.id
