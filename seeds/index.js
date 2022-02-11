@@ -3,6 +3,7 @@ const seedUsers = require('./user-seeds');
 const seedHomeowners = require('./homeowner-seeds');
 const seedAuto = require('./auto-seeds');
 
+
 const seedAll = async () => {
   await sequelize.sync({ force: true });
   console.log('--------------');
@@ -13,5 +14,6 @@ const seedAll = async () => {
   await seedHomeowners();
   process.exit(0);
 };
+
 
 seedAll();
