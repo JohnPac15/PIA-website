@@ -3,6 +3,7 @@ const sequelize = require('./config/connection');
 const routes = require('./controllers')
 const path = require('path');
 const session = require('express-session');
+const seed = require('./seeds/index')
 
 const helpers = require('./utils/helpers');
 const exphbs = require('express-handlebars');
@@ -37,6 +38,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static('views/images')); 
 
 app.use(routes);
+
+seed();
 
 sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => console.log(`Now listening on port ${PORT}`));
