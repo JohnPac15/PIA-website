@@ -51,6 +51,7 @@ router.post('/', (req, res) => {
     admin: req.body.admin
   })
   .then(dbPolicyOwnerData => res.json(dbPolicyOwnerData))
+  console.log(dbPolicyOwnerData)
   .catch((err) => {
     console.log(err);
     res.status(500).json(err);

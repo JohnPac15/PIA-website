@@ -11,7 +11,7 @@ router.get('/:id', authHelpers.loginRequired, (req,res) => {
     })
     .then(dbPolicyownerDate => {
         const user = dbPolicyownerDate.get({ plain: true })
-        console.log(user,'--------------')
+        // console.log(user,'--------------')
         res.render("edit-policyowner", { user,
             loggedIn: req.session.loggedIn,
             admin: req.session.admin,

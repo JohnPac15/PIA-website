@@ -2,7 +2,7 @@ const sequelize = require('../config/connection');
 const seedUsers = require('./user-seeds');
 const seedHomeowners = require('./homeowner-seeds');
 const seedAuto = require('./auto-seeds');
-const { Model } = require('sequelize/types');
+
 
 const seedAll = async () => {
   await sequelize.sync({ force: true });
@@ -16,4 +16,4 @@ const seedAll = async () => {
 };
 
 
-module.exports= seedAll();
+seedAll();
