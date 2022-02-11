@@ -58,5 +58,21 @@ async function autoUpdateFormHandler(event) {
       }
     }
 
+    async function autoDeleteHandler(event) {
+      event.preventDefault();
+      const id = document.querySelector('.delete-auto').value.trim();
+      console.log('click', id)
+      /*const response = await fetch(`/api/auto/${id}`, {
+        method: 'delete'
+      });
+    
+        // check the response status
+        if (response.ok) {
+          document.location.replace('/admin');
+        } else {
+          alert(response.statusText);
+        }*/
+      }
+      document.querySelector('.delete-auto').addEventListener('click', autoDeleteHandler);     
   document.querySelector('.update-auto-form').addEventListener('submit', autoUpdateFormHandler);
   document.querySelector('.update-homeowner-form').addEventListener('submit', homeownerUpdateFormHandler);

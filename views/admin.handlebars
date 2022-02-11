@@ -103,8 +103,8 @@
                     <div class="modal-body">
                     <form class="delete-home-form">Are you sure you want to delete the policy?                 
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button value={{this.id}} id="delete-home" type="submit" class="delete-home btn btn-warning my-1">Delete</button>
+                      <button value={{this.id}} id="delete-home" type="button" class="delete-home btn btn-warning my-1">Yes</button>
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
                     </div>                        
                     </form>
                     </div>
@@ -160,7 +160,7 @@
                       <input type="text" name="" id="exp-date-auto-update" class="form-control my-4 py-2"  value={{expiration_date}}>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button value={{id}} id="delete-auto" type="button" class="delete-auto btn btn-warning my-1">Delete</button>
+                        <button type="button" class="delete-auto btn btn-warning my-1" value={{id}}>Delete</button>
                         <button type="submit" class="btn btn-warning">Save changes</button>
                       </div>
                     </form>

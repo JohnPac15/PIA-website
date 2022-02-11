@@ -16,7 +16,7 @@ async function autoDeleteHandler(event) {
     
   async function homeownerDeleteHandler(event) {
     event.preventDefault();
-    const id = document.querySelector('#delete-home-form').value.trim();
+    const id = document.querySelector('#delete-home').value.trim();
     console.log('click', id)
     /*const response = await fetch(`/api/homeowners/${id}`, {
       method: 'delete'
@@ -30,6 +30,6 @@ async function autoDeleteHandler(event) {
       }*/
     }
     
-  document.querySelector('.delete-auto').addEventListener('click', autoDeleteHandler);
+  
   document.querySelector('.delete-home-form').addEventListener('click', homeownerDeleteHandler);
   
