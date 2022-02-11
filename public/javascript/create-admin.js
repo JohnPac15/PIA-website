@@ -1,4 +1,4 @@
-async function signupFormHandler(event) {
+async function adminFormHandler(event) {
     event.preventDefault();
   
     const first_name = document.querySelector('#firstname-register').value.trim();
@@ -11,7 +11,7 @@ async function signupFormHandler(event) {
 
     if (first_name && last_name && email && username && password && policyowner) {
       
-      const response = await fetch('/register', {
+      const response = await fetch('/create-admin', {
         method: 'post',
         body: JSON.stringify({
           first_name,
@@ -20,6 +20,7 @@ async function signupFormHandler(event) {
           username,
           password,
           policyowner,
+          admin: true
         }),
         headers: { 'Content-Type': 'application/json' }
       });
@@ -33,4 +34,4 @@ async function signupFormHandler(event) {
     }
   }    
       
-  document.querySelector('.register-form').addEventListener('submit', signupFormHandler);
+  document.querySelector('.admin-form').addEventListener('submit', adminFormHandler);

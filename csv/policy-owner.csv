@@ -1,0 +1,7 @@
+id,first_name,last_name,email,username,password,policyOwner,admin
+1,Tom,Thumb,tom@pia.com,tom,$2b$10$KWnEoQporqCdEvZi3lV2mexoKLCB76rz9RqW4MNltJ9nGfV3Fxicu,true,false
+2,Timmy,Turner,tim@email.com,timmy,$2b$10$zgF.LaoF7UT.bOwjVurMieyzGUpY/JSoHAn6eyq8aaglrkqvn7FjG,true,true
+3,Kate,Wilson,Kate@email.com,Kate,$2b$10$lxo.TPotuBDnfQRM2/FTauZkJ.DD/w8obuVgzrI6TTmEWgBZSURH2,true,false
+4,Robert,Clarady,robert@pia.com,robert,$2b$10$yBdRu1Q15QsKl03emXP0f.3D7Y3ICjLWJqmY1mb9X7YrRbdqYhWCy,true,true
+5,Stella,Clarkson,stelly@email.com,Stelly,$2b$10$7mf3E7Skl4fpqkHmDWrbOee8iAC/RWfRpJ1ltxdbwftWF5nJrgT0m,true,true
+6,Ethan,Jackson,ethan@email.com,ethan,$2b$10$jPHLPQXaiMPnlkVCWnkPPeke.PQhFqis6a145QISHdbMBCn8Lh7tS,true,true
