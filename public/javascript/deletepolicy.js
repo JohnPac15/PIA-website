@@ -13,7 +13,7 @@ async function autoDeleteHandler(event) {
         alert(response.statusText);
       }*/
     }
-    
+
   async function homeownerDeleteHandler(event) {
     event.preventDefault();
     const id = document.querySelector('#delete-home').value.trim();

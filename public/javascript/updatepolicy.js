@@ -60,7 +60,7 @@ async function autoUpdateFormHandler(event) {
 
     async function autoDeleteHandler(event) {
       event.preventDefault();
-      const id = document.querySelector('.delete-auto').value.trim();
+      const id = document.querySelector('#delete-auto').value.trim();
       console.log('click', id)
       /*const response = await fetch(`/api/auto/${id}`, {
         method: 'delete'
