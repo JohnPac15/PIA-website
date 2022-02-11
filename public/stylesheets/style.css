@@ -10,6 +10,8 @@ body::before {
     object-fit: cover;
 }
 
-#logo{
-    size: 20px;
-}
+/* #logo{
+    background-image: url(/images/PIA-large.jpg);
+    background-repeat: no-repeat;
+    height: 30px;
+} */
