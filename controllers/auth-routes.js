@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { response } = require('express');
 const validator = require('validator');
 const { PolicyOwner } = require('../models');
 
@@ -22,7 +23,7 @@ router.post('/register', (req, res)  => {
     last_name: req.body.last_name,
     email: req.body.email,
     username: req.body.username,
-    password: req.body.password
+    password: req.body.password,
   })
   .then(dbUserData => {
     req.session.save(() => {
