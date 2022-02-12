@@ -32,7 +32,7 @@
       </div>
     </div>
     {{#each user}}
-      <h3 class="mt-5">Customer {{id}}: {{last_name}}, {{first_name}}</h3>
+      <h3 class="mt-5">Customer {{id}}: <a href="/edit/{{id}}">{{last_name}}, {{first_name}}</a></h3>
       <div
         class="row d-flex align-items-top justify-content-between g-4 mt-1"
       >
