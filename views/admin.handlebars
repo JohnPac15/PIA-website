@@ -1,34 +1,36 @@
 <section class="p-5 min-vh-100">
   <div class="container">
-    <h1 class="text-center">The Agents</h1>
-    <section>
-      <h2>Add New Auto Policy</h2>
-        <form class="new-auto-form">
-          <input type="number" name="" id="owner-id-auto" class="form-control my-4 py-2" placeholder="Customer ID">
-          <input type="text" name="" id="company-auto" class="form-control my-4 py-2" placeholder="Company Name">
-          <input type="number" name="" id="premium-auto" class="form-control my-4 py-2" placeholder="Annual Premium">
-          <input type="number" name="" id="policy-auto" class="form-control my-4 py-2" placeholder="Policy Number">
-          <input type="text" name="" id="exp-date-auto" class="form-control my-4 py-2" placeholder="Expiration Date">
-          <input type="text" name="" id="vehicle-auto" class="form-control my-4 py-2" placeholder="Vehicle">
-          <div class="text-center mt-3">
-            <button type="submit" class="btn btn-warning my-3">Add Policy</button><br>
-          </div>
-        </form>
-    </section>
-    <section>
-      <h2>Add New Homeowner Policy</h2>
+    <h1 class="text-center mb-5">The Agents</h1>
+    <div class="row d-flex align-items-top justify-content-between g-4 mt-1">
+      <div class="col-md">
+      <h3>Add New Homeowner Policy</h3>
         <form class="new-homeowner-form">
-          <input type="number" name="" id="owner-id-home" class="form-control my-4 py-2" placeholder="Customer ID">
-          <input type="text" name="" id="company-home" class="form-control my-4 py-2" placeholder="Company Name">
-          <input type="number" name="" id="premium-home" class="form-control my-4 py-2" placeholder="Annual Premium">
-          <input type="number" name="" id="policy-home" class="form-control my-4 py-2" placeholder="Policy Number">
-          <input type="text" name="" id="exp-date-home" class="form-control my-4 py-2" placeholder="Expiration Date">
-          <input type="text" name="" id="address-home" class="form-control my-4 py-2" placeholder="Address">
-          <div class="text-center mt-3">
-            <button type="submit" class="btn btn-warning my-3">Add Policy</button><br>
+          <input type="number" name="" id="owner-id-home" class="form-control my-1 py-2" placeholder="Customer ID">
+          <input type="text" name="" id="address-home" class="form-control my-1 py-2" placeholder="Address">
+          <input type="text" name="" id="company-home" class="form-control my-1 py-2" placeholder="Company Name">
+          <input type="number" name="" id="premium-home" class="form-control my-1 py-2" placeholder="Annual Premium">
+          <input type="number" name="" id="policy-home" class="form-control my-1 py-2" placeholder="Policy Number">
+          <input type="text" name="" id="exp-date-home" class="form-control my-1 py-2" placeholder="Expiration Date (YYYY-MM-DD)">          
+          <div class="text-center mt-1">
+            <button type="submit" class="btn btn-warning my-1"><i class="bi bi-plus-lg "></i> Add Policy</button><br>
           </div>
         </form>
-    </section>
+      </div>
+      <div class="col-md">
+        <h3>Add New Auto Policy</h3>
+          <form class="new-auto-form">
+            <input type="number" name="" id="owner-id-auto" class="form-control my-1 py-2" placeholder="Customer ID">
+            <input type="text" name="" id="company-auto" class="form-control my-1 py-2" placeholder="Company Name">
+            <input type="text" name="" id="vehicle-auto" class="form-control my-1 py-2" placeholder="Vehicle">
+            <input type="number" name="" id="premium-auto" class="form-control my-1 py-2" placeholder="Annual Premium">
+            <input type="number" name="" id="policy-auto" class="form-control my-1 py-2" placeholder="Policy Number">
+            <input type="text" name="" id="exp-date-auto" class="form-control my-1 py-2" placeholder="Expiration Date (YYYY-MM-DD)">            
+            <div class="text-center mt-1">
+              <button type="submit" class="btn btn-warning my-1"><i class="bi bi-plus-lg"></i> Add Policy</button><br>
+            </div>
+          </form>
+      </div>
+    </div>
     {{#each user}}
       <h3 class="mt-5">Customer {{id}}: {{last_name}}, {{first_name}}</h3>
       <div
@@ -42,32 +44,26 @@
             </div>
 
             {{#each homeowners_policies as |home|}}
-              <li class="list-group-item list-group-item-primary">Policy ID:
-                <span
-                  class="text-dark fst-italic"
-                >{{id}}</span></li>
-              <li class="list-group-item list-group-item-light">Property
-                address:
-                <span
-                  class="text-dark fst-italic"
-                >{{property_address}}</span></li>
-              <li class="list-group-item list-group-item-light">Your Policy is
-                with
-                <span
-                  class="text-dark fst-italic"
-                >{{home.company_name}}</span></li>
+              <li class="list-group-item list-group-item-primary d-flex justify-content-between mt-3">
+                <div>Policy ID: <span class="text-dark fst-italic">{{id}}</span>
+                </div>
+                <div>
+                  <a href="/edit/home/{{id}}"><button type="button" class="btn btn-warning">Update</button></a>                   
+                </div>
+              </li>
+              <li class="list-group-item list-group-item-light">Property address:
+                <span class="text-dark fst-italic">{{property_address}}</span>
+              </li>
+              <li class="list-group-item list-group-item-light">Your Policy is with
+                <span class="text-dark fst-italic">{{company_name}}</span>
+              </li>
               <li class="list-group-item list-group-item-light">Your premium is: $
-                <span
-                  class="text-dark fst-italic"
-                >{{home.annual_premium}}</span></li>
-              <li
-                class="list-group-item list-group-item-light text-decoration-underline"
-              >Your policy will expire on:
-                <span class="text-danger fst-italic">{{format_date
-                    home.expiration_date
-                  }}</span></li>
+                <span class="text-dark fst-italic">{{annual_premium}}</span>
+              </li>
+              <li class="list-group-item list-group-item-light text-decoration-underline">Your policy will expire on:
+                <span class="text-danger fst-italic">{{format_date expiration_date}}</span>
+              </li>              
             {{/each}}
-
           </ul>
         </div>
         <div class="col-md">
@@ -78,29 +74,27 @@
             </div>
 
             {{#each auto_policies as |auto|}}
-              <li class="list-group-item list-group-item-primary">Policy ID:
-                <span
-                  class="text-dark fst-italic"
-                >{{id}}</span></li>
-              <li class="list-group-item list-group-item-light">Your auto policy
-                is with:
-                <span
-                  class="text-dark fst-italic"
-                >{{auto.company_name}}</span></li>
-              <li class="list-group-item list-group-item-light">Vehicle on
-                policy is:
-                <span class="text-dark fst-italic">{{auto.vehicle}}</span></li>
+              <li class="list-group-item list-group-item-primary d-flex justify-content-between mt-3">
+                <div>Policy ID:
+                  <span class="text-dark fst-italic">{{id}}</span>
+                </div>
+                <div>
+                  <a href="/edit/auto/{{id}}"><button type="button" class="btn btn-warning">Update</button></a>                   
+                </div>
+              </li>
+              <li class="list-group-item list-group-item-light">Your auto policy is with:
+                <span class="text-dark fst-italic">{{auto.company_name}}</span>
+              </li>
+              <li class="list-group-item list-group-item-light">Vehicle on policy is:
+                <span class="text-dark fst-italic">{{auto.vehicle}}</span>
+              </li>
               <li class="list-group-item list-group-item-light">Your premium is: $
-                <span
-                  class="text-dark fst-italic"
-                >{{auto.annual_premium}}</span></li>
-              <li
-                class="list-group-item list-group-item-light text-decoration-underline"
-              >Your auto pilocy will expire on:
-                <span class="text-danger fst-italic">{{format_date
-                    auto.expiration_date
-                  }}</span></li>
-            {{/each}}
+                <span class="text-dark fst-italic">{{auto.annual_premium}}</span>
+              </li>
+              <li class="list-group-item list-group-item-light text-decoration-underline">Your auto policy will expire on:
+                <span class="text-danger fst-italic">{{format_date auto.expiration_date}}</span>
+              </li>   
+            {{/each}}            
           </ul>
         </div>
       </div>
@@ -108,3 +102,4 @@
   </div>
 </section>
 <script src="/javascript/newpolicy.js"></script>
+

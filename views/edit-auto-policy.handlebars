@@ -1,0 +1,50 @@
+<section class="p-5 min-vh-100">
+    <div class="container mt-3 pt-5">
+        <div class="row ">
+            <div class="col-12 col-sm-8 col-md-6 m-auto">
+                <div class="card border-0 shadow bg-white">
+                    <div class="card-body">
+                        <div class="h1 text-center">
+                            <i class="bi bi-people"></i> <span class="h3">Update Auto Policy Information</span>
+                        </div>
+                        <form class="update-homeowner-form">                 
+                          <div class="form-group mb-3 mt-4">
+                            <label for="policy-id">Policy ID:</label>
+                            <input type="text" name="" id="id-auto-update" class="form-control my-1 py-2" value={{user.id}}>
+                          </div>
+                          <div class="form-group mb-3">
+                            <label for="vehicle">Vehicle:</label>
+                           <input type="text" name="" id="vehicle-update" class="form-control my-1 py-2"  value="{{user.vehicle}}">                  
+                          </div>
+                          <div class="form-group mb-3">
+                            <label for="company">Company:</label>
+                            <input type="text" name="" id="company-auto-update" class="form-control my-1 py-2"  value="{{user.company_name}}">        
+                          </div>
+                          <div class="form-group mb-3">
+                            <label for="premium">Premium:</label>
+                            <input type="number" name="" id="premium-auto-update" class="form-control my-1 py-2" value={{user.annual_premium}}>
+                          </div>
+                          <div class="form-group mb-3">
+                            <label for="policynumber">Policy #:</label>
+                            <input type="number" name="" id="policy-auto-update" class="form-control my-1 py-2"  value={{user.policy_number}}>
+                          </div>
+                          <div class="form-group mb-3">
+                            <label for="experationDate">Exp Date:</label>
+                            <input type="text" name="" id="exp-date-auto-update" class="form-control my-1 py-2"  value={{user.expiration_date}}>
+                          </div>
+                          <div>
+                            <div class ="d-flex align-items-center justify-content-center">
+                              <a href="/admin" class="pe-2"><button type="button" class="btn btn-dark my-1 py-1">Return</button></a>
+                              <button type="submit" class="btn btn-warning my-1 py-1">Save changes</button>
+                            </div>
+                          </div>
+                        </form>
+                    <form class="delete-policy d-flex align-items-top justify-content-center">
+                      <button type="button" class="delete-btn btn btn-danger">Delete</button>
+                    </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+<script src="/javascript/autopolicy.js"></script>
