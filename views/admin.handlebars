@@ -1,32 +1,32 @@
 <section class="p-5 min-vh-100">
   <div class="container">
-    <h1 class="text-center">The Agents</h1>
+    <h1 class="text-center mb-5">The Agents</h1>
     <div class="row d-flex align-items-top justify-content-between g-4 mt-1">
       <div class="col-md">
       <h3>Add New Homeowner Policy</h3>
         <form class="new-homeowner-form">
-          <input type="number" name="" id="owner-id-home" class="form-control my-1 py-1" placeholder="Customer ID">
-          <input type="text" name="" id="address-home" class="form-control my-1 py-1" placeholder="Address">
-          <input type="text" name="" id="company-home" class="form-control my-1 py-1" placeholder="Company Name">
-          <input type="number" name="" id="premium-home" class="form-control my-1 py-1" placeholder="Annual Premium">
-          <input type="number" name="" id="policy-home" class="form-control my-1 py-1" placeholder="Policy Number">
-          <input type="text" name="" id="exp-date-home" class="form-control my-1 py-1" placeholder="Expiration Date (YYYY-MM-DD)">          
+          <input type="number" name="" id="owner-id-home" class="form-control my-1 py-2" placeholder="Customer ID">
+          <input type="text" name="" id="address-home" class="form-control my-1 py-2" placeholder="Address">
+          <input type="text" name="" id="company-home" class="form-control my-1 py-2" placeholder="Company Name">
+          <input type="number" name="" id="premium-home" class="form-control my-1 py-2" placeholder="Annual Premium">
+          <input type="number" name="" id="policy-home" class="form-control my-1 py-2" placeholder="Policy Number">
+          <input type="text" name="" id="exp-date-home" class="form-control my-1 py-2" placeholder="Expiration Date (YYYY-MM-DD)">          
           <div class="text-center mt-1">
-            <button type="submit" class="btn btn-warning my-1">Add Policy</button><br>
+            <button type="submit" class="btn btn-warning my-1"><i class="bi bi-plus-lg "></i> Add Policy</button><br>
           </div>
         </form>
       </div>
       <div class="col-md">
         <h3>Add New Auto Policy</h3>
           <form class="new-auto-form">
-            <input type="number" name="" id="owner-id-auto" class="form-control my-1 py-1" placeholder="Customer ID">
-            <input type="text" name="" id="company-auto" class="form-control my-1 py-1" placeholder="Company Name">
-            <input type="text" name="" id="vehicle-auto" class="form-control my-1 py-1" placeholder="Vehicle">
-            <input type="number" name="" id="premium-auto" class="form-control my-1 py-1" placeholder="Annual Premium">
-            <input type="number" name="" id="policy-auto" class="form-control my-1 py-1" placeholder="Policy Number">
-            <input type="text" name="" id="exp-date-auto" class="form-control my-1 py-1" placeholder="Expiration Date (YYYY-MM-DD)">            
+            <input type="number" name="" id="owner-id-auto" class="form-control my-1 py-2" placeholder="Customer ID">
+            <input type="text" name="" id="company-auto" class="form-control my-1 py-2" placeholder="Company Name">
+            <input type="text" name="" id="vehicle-auto" class="form-control my-1 py-2" placeholder="Vehicle">
+            <input type="number" name="" id="premium-auto" class="form-control my-1 py-2" placeholder="Annual Premium">
+            <input type="number" name="" id="policy-auto" class="form-control my-1 py-2" placeholder="Policy Number">
+            <input type="text" name="" id="exp-date-auto" class="form-control my-1 py-2" placeholder="Expiration Date (YYYY-MM-DD)">            
             <div class="text-center mt-1">
-              <button type="submit" class="btn btn-warning my-1">Add Policy</button><br>
+              <button type="submit" class="btn btn-warning my-1"><i class="bi bi-plus-lg"></i> Add Policy</button><br>
             </div>
           </form>
       </div>
@@ -44,7 +44,7 @@
             </div>
 
             {{#each homeowners_policies as |home|}}
-              <li class="list-group-item list-group-item-primary d-flex justify-content-between">
+              <li class="list-group-item list-group-item-primary d-flex justify-content-between mt-3">
                 <div>Policy ID: <span class="text-dark fst-italic">{{id}}</span>
                 </div>
                 <div>
@@ -74,7 +74,7 @@
             </div>
 
             {{#each auto_policies as |auto|}}
-              <li class="list-group-item list-group-item-primary d-flex justify-content-between">
+              <li class="list-group-item list-group-item-primary d-flex justify-content-between mt-3">
                 <div>Policy ID:
                   <span class="text-dark fst-italic">{{id}}</span>
                 </div>
