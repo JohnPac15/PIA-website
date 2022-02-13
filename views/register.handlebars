@@ -13,10 +13,16 @@
                             <input type="text" name="" id="email-register" class="form-control my-4 py-2" placeholder="email">
                             <input type="text" name="" id="username-register" class="form-control my-4 py-2" placeholder="username">
                             <input type="password" name="" id="password-register" class="form-control my-4 py-2" placeholder="password">
-                            <input class="form-check-input" type="checkbox" value="true" id="policyowner">
-                            <label class="form-check-label" for="policyowner">
-                            Do you have own a policy with PIA
-                            </label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="policyowner" name="policyowner" value="true" role="switch">
+                                <label class="form-check-label" for="policyowner">Do you already have a policy with PIA</label>
+                            </div>
+                            <div class="text-center mt-3">
+                                <button id="home" type="click" class="btn btn-primary my-3" value="home">Homwowners Quote</button>
+                            </div>
+                            <div class="text-center mt-3">
+                                <button id="auto" type="button" class="btn btn-primary my-3" value="auto">Auto Quote</button>
+                            </div>
                             <div class="text-center mt-3">
                                 <button type="submit" class="btn btn-warning my-3">Register</button><br>
                                 <a href="/login" class="text-decoration-none">Already have an account ? Login here.</a>
