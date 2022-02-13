@@ -9,9 +9,14 @@
                         </div>
                         <form action="mailto:johnpac15@yahoo.com?subject=New Quote Request" method="post" enctype="text/plain">
                             <h1>Personal Information</h1>
-                                <input type="name" name="name" id="name" class="form-control my-4 py-2" placeholder="name">
-                                <input type="email" name="email" id="street-address" class="form-control my-4 py-2" placeholder="email">
-                                <input type="text" name="street address" id="street-address" class="form-control my-4 py-2" placeholder=" Street address">
+                                {{#if loggedIn}}
+                                <input type="name" name="name" id="name" class="form-control my-4 py-2" placeholder="name" value="{{user.first_name}} {{user.last_name}}">
+                                <input type="email" name="email" id="email" class="form-control my-4 py-2" placeholder="email" value="{{user.email}}">
+                                 {{else}}
+                                 <input type="name" name="name" id="name" class="form-control my-4 py-2" placeholder="name">
+                                <input type="email" name="email" id="email" class="form-control my-4 py-2" placeholder="email">
+                                {{/if}}
+                                <input type="text" name="street address" id="street-address" class="form-control my-4 py-2" placeholder="Street address">
                                 <input type="text" name="city" id="city" class="form-control my-4 py-2" placeholder="City">
                                 <input type="text" name="state" id="State" class="form-control my-4 py-2" placeholder="State">
                                 <input type="number" name="zip code" id="Zip code" class="form-control my-4 py-2" placeholder="Zip code">
@@ -53,8 +58,7 @@
                                 <br>
                             </div>
 
-                                <input type="submit" class="btn btn-warning my-3" id="email-submit"></select><br>
-
+                                <input type="submit" class="btn btn-warning my-3" id="email-submit"><br>
                         </form>
                     </div>
                 </div>

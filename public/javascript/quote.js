@@ -1,5 +1,5 @@
 const driveDiv = document.getElementById("driver-div");
-
+const emailBTN = document.getElementById('email-submit')
 const newDriver = document.getElementById("new-driver");
 const addDriver = document.getElementById("driver");
 const addVehicle = document.getElementById("vehicle");
@@ -113,5 +113,12 @@ function addNewVehicle(event) {
   newVehicle.appendChild(lineBreak);
 }
 
+function sendConfirmationMessage(event){
+  event.preventDefault()
+  console.log('do')
+  document.location.replace('/');
+}
+
 addDriver.addEventListener("click", addNewDriver);
 addVehicle.addEventListener("click", addNewVehicle);
+emailBTN.addEventListener('submit', sendConfirmationMessage);
