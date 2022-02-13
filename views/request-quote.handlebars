@@ -7,7 +7,7 @@
                         <div class="h1">
                            <i class="bi bi-people"></i>  <span class="h3">Quote Information</span> 
                         </div>
-                        <form action="mailto:johnpac15@yahoo.com" method="post" enctype="text/plain">
+                        <form action="mailto:johnpac15@yahoo.com?subject=New Quote Request" method="post" enctype="text/plain">
                             <h1>Personal Information</h1>
                                 <input type="name" name="name" id="name" class="form-control my-4 py-2" placeholder="name">
                                 <input type="email" name="email" id="street-address" class="form-control my-4 py-2" placeholder="email">
@@ -17,14 +17,13 @@
                                 <input type="number" name="zip code" id="Zip code" class="form-control my-4 py-2" placeholder="Zip code">
                                 <input type="tel" name="phone number" id="phone" class="form-control my-4 py-2" placeholder="phone"><br>
                             <h1>House Information</h1>
-                                <label for="year-built">Year Built</label>
-                                <input type="date" name="year built" id="year-built" class="form-control my-4 py-2" placeholder="Year built?">
+                                <input type="text" name="year built" id="year-built" class="form-control my-4 py-2" placeholder="Year built?">
                                 <input type="text" name="dwelling value" id="dwelling-value" class="form-control my-4 py-2" placeholder="Dwelling value?">
                                 <input type="text" name="foundation type" id="foundation type" class="form-control my-4 py-2" placeholder="foundation type?">
                                 <input type="text" name="stories" id="stories" class="form-control my-4 py-2" placeholder="stories?">
                                 <input type="text" name="siding" id="siding" class="form-control my-4 py-2" placeholder="type of siding?">
                                 <input type="text" name="roof type" id="roof-type" class="form-control my-4 py-2" placeholder="type of roof?">
-                                <input type="month" name="roof age" id="roof-age" class="form-control my-4 py-2" placeholder="Age of roof?">
+                                <input type="text" name="roof age" id="roof-age" class="form-control my-4 py-2" placeholder="Age of roof?">
                                 <input type="text" name="sqft" id="square-footage" class="form-control my-4 py-2" placeholder="Square footage of your home?">
                                 <input type="text" name="acres" id="acres" class="form-control my-4 py-2" placeholder="How many acres do you live on?">
                                 <input type="text" name="closing date" id="closing-date" class="form-control my-4 py-2" placeholder="When is your closing date">
@@ -36,8 +35,9 @@
                                 <input type="text" name="DL" id="DL" class="form-control my-4 py-2" placeholder="DL number?">
                                 <input type="text" name="DOB" id="DOB" class="form-control my-4 py-2" placeholder="Driver DOB?">
                                 <input type="text" name="Occupation" id="Occupation" class="form-control my-4 py-2" placeholder="Driver Occupation?">
-                                <button id="driver" type="click" class="btn btn-primary my-3" value="">Add a Driver</button>
+                                <br>
                                 <div id="new-driver"></div>
+                                <button id="driver" type="click" class="btn btn-primary my-3" value="">Add a Driver</button>
                                 <br>
                                 <h2>Vehicle Information</h2>
                                 <input type="text" name="vehicle year" id="vehicle-year" class="form-control my-4 py-2" placeholder="vehicle year?">
@@ -45,8 +45,12 @@
                                 <input type="text" name="vehicle model" id="vehicle-model" class="form-control my-4 py-2" placeholder="vehicle model?">
                                 <input type="text" name="VIN" id="VIN" class="form-control my-4 py-2" placeholder="VIN?">
                                 <input type="text" name="vehicle usage" id="vehicle-usage" class="form-control my-4 py-2" placeholder="vehicle usage?">
-                                <input type="text" name="Lien Holder" id="Lien-Holder" class="form-control my-4 py-2" placeholder="Lien Holder?">
+                                <input type="text" name="lien Holder" id="lien-Holder" class="form-control my-4 py-2" placeholder="Lien Holder?">
                                 <input type="text" name="deductible" id="deductible" class="form-control my-4 py-2" placeholder="Deductible?">
+                                 <br>
+                                <div id="new-vehicle"></div>
+                                <button id="vehicle" type="click" class="btn btn-primary my-3" value="">Add a Vehicle</button>
+                                <br>
                             </div>
 
                                 <input type="submit" class="btn btn-warning my-3" id="email-submit"></select><br>
@@ -59,18 +63,3 @@
     </div>
 </section>
 <script src="javascript/quote.js"></script>
- {{!-- <input type="password" name="" id="password-register" class="form-control my-4 py-2" placeholder="password">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="policyowner" name="policyowner" value="true" role="switch">
-                                <label class="form-check-label" for="policyowner">Do you already have a policy with PIA</label>
-                            </div>
-                            <div class="text-center mt-3">
-                                <button id="home" type="click" class="btn btn-primary my-3" value="home">Homwowners Quote</button>
-                            </div>
-                            <div class="text-center mt-3">
-                                <button id="auto" type="button" class="btn btn-primary my-3" value="auto">Auto Quote</button>
-                            </div>
-                            <div class="text-center mt-3">
-                                <button type="submit" class="btn btn-warning my-3">Register</button><br>
-                                <a href="/login" class="text-decoration-none">Already have an account ? Login here.</a>
-                            </div> --}}
