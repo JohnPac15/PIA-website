@@ -3,7 +3,24 @@
     <h1 class="text-center mb-5">The Agents</h1>
     <div class="row d-flex align-items-top justify-content-between g-4 mt-1">
       <div class="col-md">
-      <h3>Add New Homeowner Policy</h3>
+      <h5>Add New Policy Owner</h5>
+        <form class="register-form">
+          <input type="text" name="" id="firstname-register" class="form-control my-1 py-2" placeholder="First Name">
+          <input type="text" name="" id="lastname-register" class="form-control my-1 py-2" placeholder="Last Name">
+          <input type="text" name="" id="email-register" class="form-control my-1 py-2" placeholder="Email">
+          <input type="text" name="" id="username-register" class="form-control my-1 py-2" placeholder="Username">
+          <input type="password" name="" id="password-register" class="form-control my-1 py-2" placeholder="Password">
+          <input class="form-check-input" type="checkbox" value="true" id="policyowner" checked>
+            <label class="form-check-label" for="policyowner">
+              Has a policy with PIA
+            </label>          
+          <div class="text-center mt-1">
+            <button type="submit" class="btn btn-warning my-1"><i class="bi bi-plus-lg "></i> Add Policy Owner</button><br>
+          </div>
+        </form>
+      </div>
+      <div class="col-md">
+      <h5>Add New Homeowner Policy</h5>
         <form class="new-homeowner-form">
           <input type="number" name="" id="owner-id-home" class="form-control my-1 py-2" placeholder="Customer ID">
           <input type="text" name="" id="address-home" class="form-control my-1 py-2" placeholder="Address">
@@ -17,7 +34,7 @@
         </form>
       </div>
       <div class="col-md">
-        <h3>Add New Auto Policy</h3>
+        <h5>Add New Auto Policy</h5>
           <form class="new-auto-form">
             <input type="number" name="" id="owner-id-auto" class="form-control my-1 py-2" placeholder="Customer ID">
             <input type="text" name="" id="company-auto" class="form-control my-1 py-2" placeholder="Company Name">
@@ -102,4 +119,5 @@
   </div>
 </section>
 <script src="/javascript/newpolicy.js"></script>
+<script src="/javascript/register.js"></script>
 
