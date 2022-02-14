@@ -51,7 +51,6 @@ router.post('/', (req, res) => {
     admin: req.body.admin
   })
   .then(dbPolicyOwnerData => res.json(dbPolicyOwnerData))
-  console.log(dbPolicyOwnerData)
   .catch((err) => {
     console.log(err);
     res.status(500).json(err);
@@ -65,7 +64,7 @@ router.delete('/:id', (req, res) => {
   }
 })
 .then(dbPolicyOwnerData => {
-  if (!dbAutoData) {
+  if (!dbPolicyOwnerData) {
       res.status(404).json({ message: "No user found with this id" });
       return;
     }

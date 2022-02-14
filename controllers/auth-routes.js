@@ -27,14 +27,16 @@ router.post('/register', (req, res)  => {
     policyOwner: req.body.policyOwner
   })
   .then(dbUserData => {
-    req.session.save(() => {
-      req.session.user_id = dbUserData.id;
-      req.session.username = dbUserData.username;
-      req.session.admin = dbUserData.admin;
-      req.session.loggedIn = true;
+    if (!req.session.admin){
+      req.session.save(() => {
+        req.session.user_id = dbUserData.id;
+        req.session.username = dbUserData.username;
+        req.session.admin = dbUserData.admin;
+        req.session.loggedIn = true;
   
-      res.json(dbUserData);
-    });
+        res.json(dbUserData);
+      });
+    }
   })
   .catch((err) => {
     console.log(err);

@@ -28,14 +28,17 @@ async function signupFormHandler(event) {
         });
       console.log(response, '==================')
       if (response.ok) {
-        if(quoteRequest[0] === "quote"){
+        if (admin) {
+          document.location.replace("/admin");
+        } else {
+          if(quoteRequest[0] === "quote"){
           document.location.replace('/quote');
-        } else{
+          } else {
           document.location.replace('/');
-        }
-      } else {
+          }
+        }  
+       } else {
         alert(response.statusText);
-      }
     }
   }
 
