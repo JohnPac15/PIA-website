@@ -14,9 +14,11 @@
                             <li class="list-group-item">Email on file: <span class="fst-italic ps-1">{{user.email}}</span></li>
                         </ul>
                         <div class="d-grid col-6 mx-auto">
-
                         <button class="btn btn-warning mb-4" data-bs-toggle="modal"
                             data-bs-target="#update">Update!</button>
+                        {{#if admin}}
+                        <button  class="delete-btn btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete">Delete</button>
+                        {{/if}}    
                         </div>
                     </div>
                 </div>
@@ -24,7 +26,7 @@
         </div>
 </section>
 
-<!-- Modal -->
+<!-- Update Modal -->
 <div class="modal fade" id="update" tabindex="-1" aria-labelledby="updateLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -52,5 +54,25 @@
         </div>
     </div>
 </div>
-
+{{#if admin}}
+<!-- Delete Modal -->
+<div class="modal fade" id="delete" tabindex="-1" aria-labelledby="deleteLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="updateLabel">Delete Policy Owner</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form class="delete-policyowner-form">    
+                    <p>Are you sure you want to delete this policy owner?</p>             
+                    <button type="button" class="btn btn-danger">Yes</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>    
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/javascript/delete.js"></script>
+{{/if}}
 <script src="/javascript/update.js"></script>

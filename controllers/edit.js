@@ -3,19 +3,17 @@ const { Auto, Homeowners, PolicyOwner } = require("../models");
 const authHelpers = require("../auth/_helpers");
 
 router.get('/:id', authHelpers.loginRequired, (req,res) => {
-    console.log(req)
+    console.log(req.params.id)
     PolicyOwner.findOne({
         where: {
-            id: req.session.user_id
+            id: req.params.id
           }
     })
     .then(dbPolicyownerDate => {
         const user = dbPolicyownerDate.get({ plain: true })
-        console.log(user,'--------------')
         res.render("edit-policyowner", { user,
             loggedIn: req.session.loggedIn,
-            admin: req.session.admin,
-            user_id: req.session.user_id
+            admin: req.session.admin
           });
     })
 })
