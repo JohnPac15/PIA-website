@@ -28,15 +28,17 @@ async function signupFormHandler(event) {
       });
       console.log(response, '==================')
       if (response.ok) {
-        if(quoteRequest[0] === "home" || quoteRequest[1] === "home" || quoteRequest[0] === "auto" || quoteRequest[1] === "auto" ){
-          
-          document.location.replace('/quote');
-        } else{
+        if (admin) {
+          document.location.replace("/admin");
+        } else {
+          if (quoteRequest[0] === "home" || quoteRequest[1] === "home" || quoteRequest[0] === "auto" || quoteRequest[1] === "auto" ){
+            document.location.replace('/quote');
+          } else {
           document.location.replace('/');
-        }
-      } else {
+          }
+        }  
+       } else {
         alert(response.statusText);
-      }
     }
   }
    
