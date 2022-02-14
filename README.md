@@ -63,6 +63,6 @@ Page for admins to review policy owners and make changes as needed. This page cu
 
 ## Deployed Application
 
-![website image]('./public/images/showcase.JPG')
+![website image](./public/images/showcase.JPG)
 
-[Deployed Website]("https://warm-dusk-30815.herokuapp.com")
+[Deployed Website](https://warm-dusk-30815.herokuapp.com)
