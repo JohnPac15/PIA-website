@@ -1,3 +1,4 @@
+const policyowner = document.getElementById('policyowner')
 const quoteRequest =[]
 
 async function signupFormHandler(event) {
@@ -8,28 +9,26 @@ async function signupFormHandler(event) {
     const email = document.querySelector('#email-register').value.trim();
     const username = document.querySelector('#username-register').value.trim();
     const password = document.querySelector('#password-register').value.trim();
-    const policyowner = document.getElementById('policyowner').value.trim()
-    
-    console.log(quoteRequest) 
+    const policyOwner = policyowner.value.trim()
+    console.log(quoteRequest[0], quoteRequest[1], policyOwner) 
   
-    if (first_name && last_name && email && username && password && policyowner) {
-      
-      const response = await fetch('/register', {
-        method: 'post',
-        body: JSON.stringify({
-          first_name,
-          last_name,
-          email,
-          username,
-          password,
-          policyowner,
-        }),
-        headers: { 'Content-Type': 'application/json' }
-      });
+    if (first_name && last_name && email && username && password) {
+    
+        const response = await fetch('/register', {
+          method: 'post',
+          body: JSON.stringify({
+            first_name,
+            last_name,
+            email,
+            username,
+            password,
+            policyOwner
+          }),
+          headers: { 'Content-Type': 'application/json' }
+        });
       console.log(response, '==================')
       if (response.ok) {
-        if(quoteRequest[0] === "home" || quoteRequest[1] === "home" || quoteRequest[0] === "auto" || quoteRequest[1] === "auto" ){
-          
+        if(quoteRequest[0] === "quote"){
           document.location.replace('/quote');
         } else{
           document.location.replace('/');
@@ -39,25 +38,28 @@ async function signupFormHandler(event) {
       }
     }
   }
+
+  function returnCustomer(event){
+    event.preventDefault()
+    policyowner.disabled = true
+    console.log(policyowner.textContent, policyowner.value)
+    if(policyowner.value === "false"){
+      policyowner.value = "true"
+      console.log(policyowner.value,'hey is it true?')
+      policyowner.textContent = "We appreciate your business!"
+    } 
+
+  }
    
-  function requestHome(event){
+  function requestQuote(event){
     event.preventDefault();
-    document.getElementById('home').disabled = true
-    const homeQuote = document.getElementById('home').value
-    const addHome = quoteRequest.push(homeQuote)
-    return addHome
+    document.getElementById('quote').disabled = true
+    const newQuote = document.getElementById('quote').value
+    const addQuote = quoteRequest.push(newQuote)
+    return addQuote
 
   }
-  function requestAuto(event){
-    event.preventDefault();
-    document.getElementById('auto').disabled = true
-    const autoQuote = document.getElementById('auto').value 
-    const addAuto = quoteRequest.push(autoQuote)
-    return addAuto
-
-  }
-
       
   document.querySelector('.register-form').addEventListener('submit', signupFormHandler);
-  document.getElementById('auto').addEventListener('click', requestAuto);
-  document.getElementById('home').addEventListener('click', requestHome);
+  document.getElementById('quote').addEventListener('click', requestQuote);
+  policyowner.addEventListener('click', returnCustomer);

@@ -24,6 +24,7 @@ router.post('/register', (req, res)  => {
     email: req.body.email,
     username: req.body.username,
     password: req.body.password,
+    policyOwner: req.body.policyOwner
   })
   .then(dbUserData => {
     req.session.save(() => {
