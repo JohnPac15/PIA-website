@@ -44,4 +44,4 @@ async function homeownerUpdateFormHandler(event) {
       }
    
   document.querySelector('.delete-policy').addEventListener('click', homeDeleteHandler);
-  document.querySelector('.update-homeowner-form').addEventListener('click', homeownerUpdateFormHandler);
+  document.querySelector('.update-homeowner-form').addEventListener('submit', homeownerUpdateFormHandler);
