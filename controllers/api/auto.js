@@ -15,10 +15,9 @@ router.get('/', (req, res) => {
 })
 
 router.put('/:id', (req, res) => {
-    console.log(req.body)
+    // console.log(req.body)
     Auto.update(req.body, {
-        individualHooks: true,
-        where:{ id: req.body.id}
+        where:{ id: req.params.id}
     })
     .then((dbAutoData) => res.json(dbAutoData))
     .catch((err) => {

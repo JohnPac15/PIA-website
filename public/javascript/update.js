@@ -20,10 +20,13 @@ async function updateFormHandler(event) {
     }),
     headers: { "Content-Type": "application/json" },
   });
-  console.log(response,'f,yeah')
 
   if (response.ok) {
+    if (admin) {
+    document.location.replace("/admin");
+    } else {
     document.location.replace("/dashboard");
+    }
   } else {
     alert(response.statusText);
   }
