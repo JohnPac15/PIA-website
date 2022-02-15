@@ -20,7 +20,6 @@ async function updateFormHandler(event) {
     }),
     headers: { "Content-Type": "application/json" },
   });
-  console.log(response,'f,yeah')
 
   if (response.ok) {
     if (admin) {
