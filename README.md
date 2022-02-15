@@ -61,8 +61,19 @@ Policy owners must login to see their policies on the dashboard. After logging i
 
 Page for admins to review policy owners and make changes as needed. This page currently has basic functions. Additional functions such as updating policies, changing policy owner data, and adding/removing policy owners and admins.
 
+## Screenshots
+<img width="1440" alt="Screen Shot 2022-02-14 at 10 19 08 PM" src="https://user-images.githubusercontent.com/88564390/153992324-b7d5e2e1-8f81-4862-b00a-06dd889b4270.png">
+<img width="1440" alt="Screen Shot 2022-02-14 at 10 19 22 PM" src="https://user-images.githubusercontent.com/88564390/153992334-aea3ec24-1e90-474c-834d-b23bc8ef5668.png">
+<img width="1440" alt="Screen Shot 2022-02-14 at 10 19 41 PM" src="https://user-images.githubusercontent.com/88564390/153992339-4f002b56-dd8e-407c-8f2f-1899439e57f1.png">
+<img width="1440" alt="Screen Shot 2022-02-14 at 10 19 52 PM" src="https://user-images.githubusercontent.com/88564390/153992346-399ac414-786b-4549-9f5e-15ae3ebf82e1.png">
+<img width="1440" alt="Screen Shot 2022-02-14 at 10 20 00 PM" src="https://user-images.githubusercontent.com/88564390/153992352-cbaf0282-0fe6-4417-bcfd-56f64fef8f52.png">
+<img width="1440" alt="Screen Shot 2022-02-14 at 10 20 15 PM" src="https://user-images.githubusercontent.com/88564390/153992357-3fa02dcc-4ba7-4d61-b9e3-db7101a75d7f.png">
+<img width="1440" alt="Screen Shot 2022-02-14 at 10 20 32 PM" src="https://user-images.githubusercontent.com/88564390/153992362-03acdb2c-743f-481c-9277-f9994978ebd1.png">
+
+
 ## Deployed Application
 
 ![website image](./public/images/showcase.JPG)
 
 [Deployed Website](https://warm-dusk-30815.herokuapp.com)
+

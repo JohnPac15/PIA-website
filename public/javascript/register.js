@@ -32,15 +32,17 @@ async function signupFormHandler(event) {
           document.location.replace("/admin");
         } else {
           if(quoteRequest[0] === "quote"){
-          document.location.replace('/quote');
+            document.location.replace('/quote');
           } else {
           document.location.replace('/');
           }
-        }  
-       } else {
+        }
+      } else {
         alert(response.statusText);
+      }
     }
   }
+  
 
   function returnCustomer(event){
     event.preventDefault()
@@ -51,18 +53,16 @@ async function signupFormHandler(event) {
       console.log(policyowner.value,'hey is it true?')
       policyowner.textContent = "We appreciate your business!"
     } 
-
   }
-   
+
   function requestQuote(event){
     event.preventDefault();
     document.getElementById('quote').disabled = true
     const newQuote = document.getElementById('quote').value
     const addQuote = quoteRequest.push(newQuote)
-    return addQuote
-
+    return addQuote;
   }
       
   document.querySelector('.register-form').addEventListener('submit', signupFormHandler);
-  document.getElementById('quote').addEventListener('click', requestQuote);
+  document.getElementById('quote').addEventListener("click", requestQuote)
   policyowner.addEventListener('click', returnCustomer);
