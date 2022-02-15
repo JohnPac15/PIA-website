@@ -32,11 +32,12 @@ async function signupFormHandler(event) {
           } else {
           document.location.replace('/');
           }
-      }  
-    } else {
+      } else {
         alert(response.statusText);
+      }
     }
-  } 
+  }
+  
 
   function returnCustomer(event){
     event.preventDefault()
@@ -47,7 +48,6 @@ async function signupFormHandler(event) {
       console.log(policyowner.value,'hey is it true?')
       policyowner.textContent = "We appreciate your business!"
     } 
-
   }
 
   function requestQuote(event){
@@ -55,8 +55,8 @@ async function signupFormHandler(event) {
     document.getElementById('quote').disabled = true
     const newQuote = document.getElementById('quote').value
     const addQuote = quoteRequest.push(newQuote)
-    return addQuote
- }
+    return addQuote;
+  }
       
   document.querySelector('.register-form').addEventListener('submit', signupFormHandler);
   document.getElementById('quote').addEventListener("click", requestQuote)
