@@ -71,9 +71,9 @@ Page for admins to review policy owners and make changes as needed. This page cu
 <img width="1440" alt="Screen Shot 2022-02-14 at 10 20 32 PM" src="https://user-images.githubusercontent.com/88564390/153992362-03acdb2c-743f-481c-9277-f9994978ebd1.png">
 
 
+
 ## Deployed Application
 
-![website image](./public/images/showcase.JPG)
 
 [Deployed Website](https://warm-dusk-30815.herokuapp.com)
 
