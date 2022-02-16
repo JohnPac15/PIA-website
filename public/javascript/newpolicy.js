@@ -1,6 +1,6 @@
 async function autoFormHandler(event) {
   event.preventDefault();
-  
+  //allows admin to add a new auto policy for a client
   const owner_id = document.querySelector('#owner-id-auto').value.trim();
   const company_name = document.querySelector('#company-auto').value.trim();
   const annual_premium = document.querySelector('#premium-auto').value.trim();
@@ -30,7 +30,7 @@ async function autoFormHandler(event) {
     }
   }
 }
-  
+// allows admin to update a homeowner policy  
 async function homeownerFormHandler(event) {
   event.preventDefault();
 

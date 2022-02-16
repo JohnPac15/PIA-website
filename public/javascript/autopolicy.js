@@ -1,5 +1,5 @@
 async function autoUpdateFormHandler(event) {
-
+  // used for admin to update an auto policy
   event.preventDefault();
   const id = document.querySelector('#id-auto-update').value.trim();
   const company_name = document.querySelector('#company-auto-update').value.trim();
@@ -32,7 +32,7 @@ async function autoUpdateFormHandler(event) {
     alert(response.statusText);
   } 
 }
-
+// used for admin to delete an auto policy
     async function auotDeleteHandler(event) {
       event.preventDefault();
       const id = document.querySelector('#id-auto-update').value.trim();

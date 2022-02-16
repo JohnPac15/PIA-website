@@ -1,7 +1,6 @@
 async function homeownerUpdateFormHandler(event) {
   event.preventDefault();
-  
-  console.log('save')
+  // allows admin to update homeowner policy
   const id = document.querySelector('#id-homewoner-update').value.trim();
   const company_name = document.querySelector('#company-homewoner-update').value.trim();
   const annual_premium = document.querySelector('#premium-homewoner-update').value.trim();
@@ -30,7 +29,7 @@ async function homeownerUpdateFormHandler(event) {
     alert(response.statusText);
   } 
 }
-
+// allows admin to delete a home policy
     async function homeDeleteHandler(event) {
       event.preventDefault();
       const id = document.querySelector('#id-homewoner-update').value.trim();
