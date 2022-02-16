@@ -2,7 +2,7 @@
  ## Table of Contents
  * [Technology](#technology)
  * [Contributors](#contributors)
- * [ScreenShots](#license)
+ * [ScreenShots](#screenshots)
  * [Links](#links)
 ## Requirements
 
