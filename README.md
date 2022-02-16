@@ -1,5 +1,9 @@
 # Project Two - PIA Website
-
+ ## Table of Contents
+ * [Technology](#technology)
+ * [Contributors](#contributors)
+ * [ScreenShots](#license)
+ * [Links](#links)
 ## Requirements
 
 Your project should fulfill the following requirements:
@@ -20,7 +24,7 @@ Your project should fulfill the following requirements:
 - Have a quality README (with unique name, description, technologies used, screenshot, and link to deployed application).
 - Finally, you must add your project to the portfolio that you created in Module 2.
 
-## Built With:
+##  Technology
 
 - Node js
   - Express
@@ -37,11 +41,11 @@ Your project should fulfill the following requirements:
 - CSS
   - Bootstrap
 
-## Contributors:
+## Contributors
 
-- John Pacini
-- Tirsa Gomez
-- Robert Clarady
+- [John Pacini](https://github.com/JohnPac15)
+- [Tirsa Gomez](https://github.com/trrgomez)
+- [Robert Clarady](https://github.com/texrob20)
 
 ## App Functionality
 
@@ -71,9 +75,8 @@ Page for admins to review policy owners and make changes as needed. This page cu
 <img width="1440" alt="Screen Shot 2022-02-14 at 10 20 32 PM" src="https://user-images.githubusercontent.com/88564390/153992362-03acdb2c-743f-481c-9277-f9994978ebd1.png">
 
 
-
-## Deployed Application
-
-
-[Deployed Website](https://warm-dusk-30815.herokuapp.com)
-
+## Links
+### Deployed Application
+[Deployed Website](https://pacini-insurance.herokuapp.com)
+### Repository
+[PIA-Website](https://github.com/JohnPac15/PIA-website)
