@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { PolicyOwner } = require('../models');
-
+// checks to ensure user is logged in to access function
 const loginRequired = (req, res, next) => {
   if (!req.session.user_id) {
     res.redirect('/login');
@@ -8,7 +8,7 @@ const loginRequired = (req, res, next) => {
     next();
   }
 };
-
+// checks to ensure admin user is logged in to access function
 const adminRequired = (req, res, next) => {
   if (!req.session.user_id) { res.redirect('/login'); }
   PolicyOwner.findOne({
@@ -24,7 +24,7 @@ const adminRequired = (req, res, next) => {
     res.status(500).json({status: 'Something bad happened'});
   });
 }
-
+// if already logged in, doesn't try to login again
 function loginRedirect(req, res, next) {
     if (req.session.loggedIn) return res.status(401).json(
       {status: 'You are already logged in'});
