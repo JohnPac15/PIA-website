@@ -1,6 +1,6 @@
 async function updateFormHandler(event) {
   event.preventDefault();
-
+// allows admin or user to update registration information
   const first_name = document.querySelector("#firstname-register").value.trim();
   const last_name = document.querySelector("#lastname-register").value.trim();
   const email = document.querySelector("#email-register").value.trim();
@@ -20,10 +20,13 @@ async function updateFormHandler(event) {
     }),
     headers: { "Content-Type": "application/json" },
   });
-  console.log(response,'f,yeah')
 
   if (response.ok) {
+    if (admin) {
+    document.location.replace("/admin");
+    } else {
     document.location.replace("/dashboard");
+    }
   } else {
     alert(response.statusText);
   }

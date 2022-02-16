@@ -1,4 +1,5 @@
-async function homeownerUpdateFormHandler(event) {
+async function autoUpdateFormHandler(event) {
+  // used for admin to update an auto policy
   event.preventDefault();
   const id = document.querySelector('#id-auto-update').value.trim();
   const company_name = document.querySelector('#company-auto-update').value.trim();
@@ -6,16 +7,18 @@ async function homeownerUpdateFormHandler(event) {
   const policy_number = document.querySelector('#policy-auto-update').value.trim();
   const expiration_date = document.querySelector('#exp-date-auto-update').value.trim();
   const vehicle = document.querySelector('#vehicle-update').value.trim();
-console.log (id, company_name, annual_premium, policy_number, expiration_date, vehicle)
- const response = await fetch(`/api/auto/${id}`, {
-    method: 'put',
+  const owner_id = document.getElementById('owner-auto-update').value.trim();
+
+  const response = await fetch(`/api/auto/${id}`, {
+    method: 'PUT',
     body: JSON.stringify({
       id,
       company_name,
       annual_premium,
       policy_number,
       expiration_date,
-      vehicle
+      vehicle,
+      owner_id
     }),
     headers: { 'Content-Type': 'application/json' }
   });
@@ -26,8 +29,8 @@ console.log (id, company_name, annual_premium, policy_number, expiration_date, v
     alert(response.statusText);
   } 
 }
-
-    async function homeDeleteHandler(event) {
+// used for admin to delete an auto policy
+    async function auotDeleteHandler(event) {
       event.preventDefault();
       const id = document.querySelector('#id-auto-update').value.trim();
       const response = await fetch(`/api/auto/${id}`, {
@@ -42,5 +45,5 @@ console.log (id, company_name, annual_premium, policy_number, expiration_date, v
         }
       }
    
-  document.querySelector('.delete-policy').addEventListener('click', homeDeleteHandler);
-  document.querySelector('.update-homeowner-form').addEventListener('submit', homeownerUpdateFormHandler);
+  document.querySelector('.delete-policy').addEventListener('click', auotDeleteHandler);
+  document.querySelector('.update-auto-form').addEventListener('submit', autoUpdateFormHandler);

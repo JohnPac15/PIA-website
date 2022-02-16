@@ -15,10 +15,9 @@ router.get('/', (req, res) => {
 })
 
 router.put('/:id', (req, res) => {
-    console.log(req.body)
+    // console.log(req.body)
     Auto.update(req.body, {
-        individualHooks: true,
-        where:{ id: req.body.id}
+        where:{ id: req.params.id}
     })
     .then((dbAutoData) => res.json(dbAutoData))
     .catch((err) => {
@@ -28,7 +27,6 @@ router.put('/:id', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-    console.log('whats up')
     Auto.create({
         company_name: req.body.company_name,
         annual_premium: req.body.annual_premium,

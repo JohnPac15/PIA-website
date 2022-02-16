@@ -7,7 +7,7 @@
                         <div class="h1 text-center">
                             <i class="bi bi-people"></i> <span class="h3">Update Auto Policy Information</span>
                         </div>
-                        <form class="update-homeowner-form">                 
+                        <form class="update-auto-form">                 
                           <div class="form-group mb-3 mt-4">
                             <label for="policy-id">Policy ID:</label>
                             <input type="text" name="" id="id-auto-update" class="form-control my-1 py-2" value={{user.id}}>
@@ -30,12 +30,16 @@
                           </div>
                           <div class="form-group mb-3">
                             <label for="experationDate">Exp Date:</label>
-                            <input type="text" name="" id="exp-date-auto-update" class="form-control my-1 py-2"  value={{user.expiration_date}}>
+                            <input type="text" name="" id="exp-date-auto-update" class="form-control my-1 py-2"  value={{format_date user.expiration_date}}>
+                          </div>
+                          <div class="form-group mb-3">
+                            <label for="owner">Owner ID:</label>
+                            <input type="text" name="" id="owner-auto-update" class="form-control my-1 py-2"  value={{user.owner_id}}>
                           </div>
                           <div>
                             <div class ="d-flex align-items-center justify-content-center">
-                              <a href="/admin" class="pe-2"><button type="button" class="btn btn-dark my-1 py-1">Return</button></a>
-                              <button type="submit" class="btn btn-warning my-1 py-1">Save changes</button>
+                              <a href="/admin" class="btn btn-dark my-1 py-1">Return</a>
+                              <button id="BTN" type="submit" class="btn btn-warning my-1 py-1">Save changes</button>
                             </div>
                           </div>
                         </form>
