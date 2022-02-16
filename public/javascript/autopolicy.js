@@ -1,5 +1,5 @@
 async function autoUpdateFormHandler(event) {
-
+  // used for admin to update an auto policy
   event.preventDefault();
   const id = document.querySelector('#id-auto-update').value.trim();
   const company_name = document.querySelector('#company-auto-update').value.trim();
@@ -8,8 +8,6 @@ async function autoUpdateFormHandler(event) {
   const expiration_date = document.querySelector('#exp-date-auto-update').value.trim();
   const vehicle = document.querySelector('#vehicle-update').value.trim();
   const owner_id = document.getElementById('owner-auto-update').value.trim();
-
-  console.log ('klklklklkl',id, company_name, annual_premium, policy_number, expiration_date, vehicle, owner_id)
 
   const response = await fetch(`/api/auto/${id}`, {
     method: 'PUT',
@@ -24,7 +22,6 @@ async function autoUpdateFormHandler(event) {
     }),
     headers: { 'Content-Type': 'application/json' }
   });
-  console.log('save', response)
   
   if (response.ok) {
     document.location.replace('/admin');
@@ -32,7 +29,7 @@ async function autoUpdateFormHandler(event) {
     alert(response.statusText);
   } 
 }
-
+// used for admin to delete an auto policy
     async function auotDeleteHandler(event) {
       event.preventDefault();
       const id = document.querySelector('#id-auto-update').value.trim();

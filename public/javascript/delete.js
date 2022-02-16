@@ -1,6 +1,6 @@
 async function deletePolicyOwnerHandler(event) {
     event.preventDefault();
-  
+  // used for admin to delete policy owner
     const id = window.location.toString().split('/')[
       window.location.toString().split('/').length - 1
     ];

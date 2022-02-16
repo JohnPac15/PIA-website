@@ -4,13 +4,13 @@ const validator = require('validator');
 const { PolicyOwner } = require('../models');
 
 router.post('/register', (req, res)  => {
-      
+  // route for new users to register for an account    
   const emailCheck = validator.isEmail(req.body.email);
   if (!emailCheck) {
     res.status(400).json({ message: 'Please enter a valid email!' });
     res.render('/register')
   }
-
+  //checks to see if username is already taken
   PolicyOwner.findOne({
     where: {
      username: req.body.username
@@ -47,7 +47,7 @@ router.post('/register', (req, res)  => {
   }
   })
 });
-
+// user logs in with username and password
 router.post('/login', (req, res) => {
   PolicyOwner.findOne({
     where: {
@@ -76,7 +76,7 @@ router.post('/login', (req, res) => {
     });
   });
 });
-
+// closes session for user
 router.get('/logout', (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy();
