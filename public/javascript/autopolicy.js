@@ -9,8 +9,6 @@ async function autoUpdateFormHandler(event) {
   const vehicle = document.querySelector('#vehicle-update').value.trim();
   const owner_id = document.getElementById('owner-auto-update').value.trim();
 
-  console.log ('klklklklkl',id, company_name, annual_premium, policy_number, expiration_date, vehicle, owner_id)
-
   const response = await fetch(`/api/auto/${id}`, {
     method: 'PUT',
     body: JSON.stringify({
@@ -24,7 +22,6 @@ async function autoUpdateFormHandler(event) {
     }),
     headers: { 'Content-Type': 'application/json' }
   });
-  console.log('save', response)
   
   if (response.ok) {
     document.location.replace('/admin');

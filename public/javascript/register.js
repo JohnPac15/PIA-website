@@ -10,7 +10,6 @@ async function signupFormHandler(event) {
     const username = document.querySelector('#username-register').value.trim();
     const password = document.querySelector('#password-register').value.trim();
     const policyOwner = policyowner.value.trim()
-    console.log(quoteRequest[0], quoteRequest[1], policyOwner) 
   
     if (first_name && last_name && email && username && password) {
     
@@ -26,7 +25,7 @@ async function signupFormHandler(event) {
           }),
           headers: { 'Content-Type': 'application/json' }
         });
-      console.log(response, '==================')
+        
       if (response.ok) {
         if (admin) {
           document.location.replace("/admin");
