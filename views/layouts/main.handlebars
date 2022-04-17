@@ -22,10 +22,9 @@
   <body class="bg-light">
     <div class="wrapper">
       <header>
-        <nav
-          class="navbar navbar-expand-lg bg-secondary navbar-dark py-3 fixed-top">
-          <div class="container">
-            <a href="/" class="navbar-brand"><img src="/images/PIA-large.jpg" alt="logo" height="35px"></a>
+        <nav{{!-- bg-secondary --}} id="nav" class="navbar navbar-expand-lg navbar-dark py-3 fixed-top">
+          <div class="container" id="mainColor">
+            <a href="/" class="navbar-brand"><img src="/images/PIA_Small copy.jpg" alt="logo" height="100px"></a>
 
             <button
               class="navbar-toggler"
@@ -86,7 +85,7 @@
       <main>
         {{{body}}}
       </main>
-      <footer class="p-5 bg-secondary text-light position-relative">
+      <footer class="p-5  text-light position-relative" id="mainColor">
         <div class="container">
           <p class="lead">Copyright &copy; 2022 PIA</p>
           <a href="#" class="position-absolute top-0 end-0 p-5">
