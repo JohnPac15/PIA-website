@@ -1,18 +1,116 @@
-
 body::before {
-    display: block;
-    content: '';
-    height: 60px;
+  display: block;
+  content: "";
+  height: 60px;
 }
 
 #team img {
-    height: 10rem;
-    width: 10rem;
-    object-fit: cover;
+  height: 10rem;
+  width: 10rem;
+  object-fit: cover;
 }
 
-/* #logo{
-    background-image: url(/images/PIA-large.jpg);
-    background-repeat: no-repeat;
-    height: 30px;
-} */
+:root {
+  --primary-color: #34495c;
+  --secondary-color: #f5f6f6;
+  --tertiary-color: grey;
+}
+
+#mainColor {
+  background-color: var(--primary-color);
+}
+#SecColor {
+  background-color: var(--secondary-color);
+}
+#thirdColor {
+  background-color: var(--tertiary-color);
+}
+
+.pia-logo {
+  background-image: url("../images/PIA_Insurance_Logo_Color.svg");
+  width: 50px;
+  height: 100px;
+  color: var(--primary-color);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#nav {
+  background-color: var(--primary-color);
+  border: var(--primary-color) solid 2px;
+}
+
+#navmenu a {
+  color: var(--secondary-color);
+}
+
+#title-p1 {
+  color: var(--tertiary-color);
+}
+#title-p2 {
+  color: var(--primary-color);
+}
+
+#quote-btn {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+.section-boxes {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+.about-PIA {
+  color: var(--primary-color);
+}
+
+.overlay-p {
+  height: 0%;
+  /* position: fixed; */
+  top: 191px;
+  /* bottom: 0;
+  left: 59px;
+  right: 0px;
+  height: 50%;
+  width: 90%; */
+  opacity: 0;
+  transition: 0.6s ease;
+  border-radius: 10px;
+  background-color: var(--secondary-color);
+  border: var(--primary-color) 5px solid;
+}
+.overlay-c {
+  /* position: fixed; */
+  top: 191px;
+  /* bottom: 0;
+  left: 59px;
+  right: 0px;
+  height: 50%;
+  width: 90%; */
+  opacity: 0;
+  transition: 0.6s ease;
+  border-radius: 10px;
+  background-color: var(--secondary-color);
+  border: var(--primary-color) 5px solid;
+}
+
+.overlay-text-p{
+  color: var(--primary-color);
+}
+.overlay-text-c{
+  color: var(--primary-color);
+}
+
+.container-p:hover .overlay-p {
+  height: 50%;
+  opacity: 1;
+}
+.container-c:hover .overlay-c {
+  opacity: 1;
+}
+
+#team{
+  margin: 1px;
+  color: var(--secondary-color);
+  background-color: var(--tertiary-color);
+  border: var(--primary-color) solid 4px;
+}

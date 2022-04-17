@@ -76,7 +76,7 @@ Page for admins to review policy owners and make changes as needed. This page cu
 
 
 ## Links
-### Deployed Application
+### PIA-website
 [Deployed Website](https://pacini-insurance.herokuapp.com)
 ### Repository
 [PIA-Website](https://github.com/JohnPac15/PIA-website)
