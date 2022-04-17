@@ -1,12 +1,12 @@
 {{! showcase }}
 
-<section class="bg-secondary text-light p-5 text-center text-sm-start">
+<section class=" text-light p-5 text-center text-sm-start" id="secColor">
   <div class="container mt-4 pt-4">
     <div class="d-sm-flex align-items-center justify-content-between">
       <div>
-        <h1>PIA <span class="text-warning">Insurance Agency</span></h1>
+        <h1 id="title-p1">PIA <span id="title-p2">Insurance Agency</span></h1>
         <p class="lead my-4">Providing insurance to businesses and individuals along central Texas since 2022!</p>
-        <a href="/quote"><button class="btn btn-warning btn-lg">Start A New Quote</button></a>
+        <a href="/quote"><button class="btn btn-lg" id="quote-btn">Start A New Quote</button></a>
       </div>
       <img class="img-fluid w-50 d-none d-sm-block" src="showcase.svg" alt="" />
     </div>
@@ -14,39 +14,53 @@
 </section>
 
 {{! feature boxes }}
-<section class="p-5 bg-white" id="features">
-  <div class="container">
+<section class="p-5 section-boxes" id="features">
+  <div class="container" id>
     <h2 class="text-center mb-4">Our Services</h2>
     <div class="row text-center g-4 py-5">
       <div class="col-md">
-        <div class="card-body bg-dark text-light py-5">
-          <div class="h1 mb-3">
-            <i class="bi bi-house-door"></i>
-            <i class="bi bi-truck"></i>
-          </div>
-          <h3 class="card-title mb-3 pb-4">
-            Home & Auto Insurance
-          </h3>
-          <p class="card-text">
-            Keeping you protected with our home and auto insurance by providing the best deals for you.
-          </p>
-        </div>
-      </div>
-      <div class="col-md">
-        <div class="card-body bg-warning text-dark py-5">
+        <div class="card-body text-light py-5" id="thirdColor">
           <div class="h1 mb-3">
             <i class="bi bi-briefcase"></i>
           </div>
-          <h3 class="card-title mb-4">
-            Business Insurance
-          </h3>
-          <p class="card-text">
-            We offer an exceptional service for large and small companies to provide the best insurance for your business.
-          </p>
+          <div class="container-p">
+            <div class="row overlay-p">
+                  <div class="col align-self-start align-items-center overlay-text-p">
+                    <h1>Personal Lines Carriers</h1>
+                    <a href="https://www.travelers.com/go/pi/dtc/brand.html?sponsor=beta72&prd=0M4803&tfn=8662367094&type=brand&obj=acqn&mm=web&mmt=ps&div=pi&mpg=bau&creative=pst&cc=di&prt=auto&dvc=dsktop&pub=Google&cmp=Brand+General+-+TX&grp=Travelers+-+Exact&plc=travelers&gclid=CjwKCAjw9e6SBhB2EiwA5myr9s5jxVN9pYsflsO0McpBF4Il14oMy8239csxJ_lfjciZmKU2nUR8choCyC4QAvD_BwE&gclsrc=aw.ds" target="_blank"><img src="/carrier-logo/travelerslogo.jpeg" alt="Travelers" width="40%"></a>
+                  </div>
+            </div>
+            <h3 class="card-title mb-4">
+              Home and Auto Insurance
+            </h3>
+            <p class="card-text">
+              We offer an exceptional service for large and small companies to provide the best insurance for your business.
+            </p>
+          </div>
         </div>
       </div>
       <div class="col-md">
-        <div class="card-body bg-dark text-light py-5">
+        <div class="card-body text-light py-5" id="thirdColor">
+          <div class="h1 mb-3">
+            <i class="bi bi-briefcase"></i>
+          </div>
+          <div class="container-c">
+            <div class="row overlay-c">
+                  <div class="col align-self-center align-items-center overlay-text-c">
+                    <h1>Commercial Lines Carriers</h1>
+                  </div>
+            </div>
+            <h3 class="card-title mb-4">
+              Business Insurance
+            </h3>
+            <p class="card-text">
+              We offer an exceptional service for large and small companies to provide the best insurance for your business.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md">
+        <div class="card-body text-light py-5" id="mainColor">
           <div class="h1 mb-3">
             <i class="bi bi-people"></i>
           </div>
@@ -71,7 +85,7 @@
         <img class="img-fluid" src="section-1.svg" alt="" />
       </div>
       <div class="col-md p-5">
-        <h2>About <span class="text-warning">PIA</span> Insurance Agency</h2>
+        <h2>About <span class="about-PIA">PIA</span> Insurance Agency</h2>
         <p class="lead">We take the time to better understand our clients and their insurance needs.</p>
         <p>As an esteemed insurance brokerage, we serve personal and business customers by working closely with our clients to determine the appropriate type of coverage they need. We select the best coverage at the right price and mange each enrollment with great care.</p>
         <a href="#" class="btn btn-warning mt-3">
@@ -163,10 +177,10 @@
 </section>
 
 {{! meet the team }}
-<section class="p-5 bg-warning" id="team">
+<section class="p-5" id="team">
   <div class="container">
-    <h2 class="text-center text-dark mt-3">Our Team</h2>
-    <p class="lead text-center text-dark mb-5">
+    <h2 class="text-center mt-3">Our Team</h2>
+    <p class="lead text-center mb-5">
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, iusto.
     </p>
     <div class="row g-4 mb-5">
@@ -181,7 +195,7 @@
             <h3 class="card-title mb-3">
               Flo Doe
             </h3>
-            <p class="card-text">
+            <p class="card-text text-dark">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Voluptatibus, corrupti officia? Sunt cupiditate ducimus tenetur.
             </p>
@@ -203,7 +217,7 @@
             <h3 class="card-title mb-3">
               Gecko Doe
             </h3>
-            <p class="card-text">
+            <p class="card-text text-dark">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Voluptatibus, corrupti officia? Sunt cupiditate ducimus tenetur.
             </p>
@@ -225,7 +239,7 @@
             <h3 class="card-title mb-3">
               Jake Smith
             </h3>
-            <p class="card-text">
+            <p class="card-text text-dark">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Voluptatibus, corrupti officia? Sunt cupiditate ducimus tenetur.
             </p>
@@ -247,7 +261,7 @@
             <h3 class="card-title mb-3">
               Mayhem Smith
             </h3>
-            <p class="card-text">
+            <p class="card-text text-dark">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Voluptatibus, corrupti officia? Sunt cupiditate ducimus tenetur.
             </p>
@@ -274,17 +288,17 @@
             <ul class="list-group list-group-flush lead">
               <li class="list-group-item">
                 <span class="fw-bold"><i class="bi bi-geo-alt-fill pe-3"></i> </span>
-                50 Main st Boston MA
+                San Antonio, Tx
               </li>
               <li class="list-group-item">
                 <span class="fw-bold"><i class="bi bi-telephone-fill pe-3"></i>
                 </span>
-                (555) 555-5555
+                (210)-844-7182
               </li>
               <li class="list-group-item">
                 <span class="fw-bold"><i class="bi bi-envelope-fill pe-3"></i>
                 </span>
-                enroll@email.com
+                John@paciniinsurance.com
               </li>
             </ul>
           </div>
