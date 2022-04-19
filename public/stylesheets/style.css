@@ -5,7 +5,7 @@ body::before {
 }
 
 #team img {
-  height: 10rem;
+  height: 13rem;
   width: 10rem;
   object-fit: cover;
 }
@@ -63,29 +63,9 @@ body::before {
   color: var(--primary-color);
 }
 
-.overlay-p {
+.overlay {
   height: 0%;
-  /* position: fixed; */
   top: 191px;
-  /* bottom: 0;
-  left: 59px;
-  right: 0px;
-  height: 50%;
-  width: 90%; */
-  opacity: 0;
-  transition: 0.6s ease;
-  border-radius: 10px;
-  background-color: var(--secondary-color);
-  border: var(--primary-color) 5px solid;
-}
-.overlay-c {
-  /* position: fixed; */
-  top: 191px;
-  /* bottom: 0;
-  left: 59px;
-  right: 0px;
-  height: 50%;
-  width: 90%; */
   opacity: 0;
   transition: 0.6s ease;
   border-radius: 10px;
@@ -93,18 +73,24 @@ body::before {
   border: var(--primary-color) 5px solid;
 }
 
-.overlay-text-p{
+.overlay-text{
   color: var(--primary-color);
 }
-.overlay-text-c{
+.overlay-text a{
   color: var(--primary-color);
+  text-decoration: none;
 }
 
-.container-p:hover .overlay-p {
-  height: 50%;
+.container-p:hover .overlay {
+  height: 60%;
   opacity: 1;
 }
-.container-c:hover .overlay-c {
+.container-c:hover .overlay {
+  height: 60%;
+  opacity: 1;
+}
+.container-l:hover .overlay {
+  height: 60%;
   opacity: 1;
 }
 
