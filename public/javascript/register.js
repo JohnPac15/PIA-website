@@ -55,6 +55,7 @@ async function signupFormHandler(event) {
   }
 
   function requestQuote(event){
+    console.log('WHYYYY')
     event.preventDefault();
     document.getElementById('quote').disabled = true
     const newQuote = document.getElementById('quote').value

@@ -1,17 +1,9 @@
 const driveDiv = document.getElementById("driver-div");
-const emailBTN = document.getElementById('email-submit')
+const emailBTN = document.querySelector("#email-submit");
 const newDriver = document.getElementById("new-driver");
 const addDriver = document.getElementById("driver");
 const addVehicle = document.getElementById("vehicle");
 const newVehicle = document.getElementById("new-vehicle");
-
-const quoteName = document.getElementById('name')
-const email = document.getElementById('email')
-const street = document.getElementById('street-address')
-const city = document.getElementById('city')
-const state = document.getElementById('state')
-const zipCode = document.getElementById('Zip-code')
-const phone = document.getElementById('phone')
 
 function addNewDriver(event) {
   event.preventDefault();
@@ -121,35 +113,44 @@ function addNewVehicle(event) {
   newVehicle.appendChild(lineBreak);
 }
 
-async function sendConfirmationMessage(event){
-  event.preventDefault()
-  console.log('do')
+async function createQuote(event) {
+  event.preventDefault();
 
-  if(quoteName && email && street && city && state && zipCode && phone){
-    const response = await fetch('/quote', {
-      method: "post",
+  const Name = document.querySelector("#name").value.trim();
+  const email = document.querySelector("#email").value.trim();
+  const street = document.querySelector("#street-address").value.trim();
+  const city = document.querySelector("#city").value.trim();
+  const state = document.querySelector("#State").value.trim();
+  const zipCode = document.querySelector("#Zip-code").value.trim();
+  const phone = document.querySelector("#phone").value.trim();
+
+  console.log("do", Name);
+
+  if (Name && email && street && city && state && zipCode && phone) {
+    const response = await fetch("/quote", {
+      method: 'post',
       body: JSON.stringify({
-        quoteName,
+        Name,
         email,
         street,
         city,
         state,
         zipCode,
-        phone
+        phone,
       }),
-      headers: { 'Content-Type': 'application/json'}
-    })
-    // check the response status
-    console.log(response, '==================')
+      headers: { "Content-Type": "application/json" },
+    });
+    console.log(response, 'hey!')
+
     if (response.ok) {
-      document.location.replace('/');
+      document.location.replace("/");
     } else {
+
       alert(response.statusText);
     }
   }
-
 }
 
 addDriver.addEventListener("click", addNewDriver);
 addVehicle.addEventListener("click", addNewVehicle);
-emailBTN.addEventListener('submit', sendConfirmationMessage);
+emailBTN.addEventListener("click", createQuote);

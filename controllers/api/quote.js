@@ -10,23 +10,23 @@ router.get('/', (req, res) => {
       });
 })
 
-router.post('/', (req, res) => {
-    console.log('heyheyhey', req)
-    Quote.create({
-        name: req.body.name,
-        email: req.body.email,
-        street_address: req.body.street_address,
-        city: req.body.city,
-        state: req.body.state,
-        zip_code: req.body.zip_code,
-        phone_number: req.body.phone_number,
+// router.post('/', (req, res) => {
+//     console.log('heyheyhey', req.body)
+//     Quote.create({
+//         name: req.body.Name,
+//         email: req.body.email,
+//         street_address: req.body.street,
+//         city: req.body.city,
+//         state: req.body.state,
+//         zip_code: req.body.zipCode,
+//         phone_number: req.body.phone,
         
-    })
-    .then(dbQuoteData => res.json(dbQuoteData))
-    .catch((err) => {
-        console.log(err);
-        res.status(500).json(err);
-      });
-})
+//     })
+//     .then(dbQuoteData => res.json(dbQuoteData))
+//     .catch((err) => {
+//         console.log(err);
+//         res.status(500).json(err);
+//       });
+// })
 
 module.exports = router
