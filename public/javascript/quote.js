@@ -5,6 +5,14 @@ const addDriver = document.getElementById("driver");
 const addVehicle = document.getElementById("vehicle");
 const newVehicle = document.getElementById("new-vehicle");
 
+const quoteName = document.getElementById('name')
+const email = document.getElementById('email')
+const street = document.getElementById('street-address')
+const city = document.getElementById('city')
+const state = document.getElementById('state')
+const zipCode = document.getElementById('Zip-code')
+const phone = document.getElementById('phone')
+
 function addNewDriver(event) {
   event.preventDefault();
 
@@ -113,10 +121,33 @@ function addNewVehicle(event) {
   newVehicle.appendChild(lineBreak);
 }
 
-function sendConfirmationMessage(event){
+async function sendConfirmationMessage(event){
   event.preventDefault()
   console.log('do')
-  document.location.replace('/');
+
+  if(quoteName && email && street && city && state && zipCode && phone){
+    const response = await fetch('/quote', {
+      method: "post",
+      body: JSON.stringify({
+        quoteName,
+        email,
+        street,
+        city,
+        state,
+        zipCode,
+        phone
+      }),
+      headers: { 'Content-Type': 'application/json'}
+    })
+    // check the response status
+    console.log(response, '==================')
+    if (response.ok) {
+      document.location.replace('/');
+    } else {
+      alert(response.statusText);
+    }
+  }
+
 }
 
 addDriver.addEventListener("click", addNewDriver);

@@ -1,6 +1,7 @@
 const Homeowners = require('./Homeowners');
 const Auto = require('./Auto');
 const PolicyOwner = require('./Policy-Owner');
+const Quote = require('./Quote')
 
 
 PolicyOwner.hasMany(Homeowners,{
@@ -23,5 +24,5 @@ Auto.belongsTo(PolicyOwner, {
 })
 
 
-module.exports = {PolicyOwner, Homeowners, Auto}
+module.exports = {PolicyOwner, Homeowners, Auto, Quote}
 

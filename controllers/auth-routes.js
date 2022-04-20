@@ -55,7 +55,7 @@ router.post('/login', (req, res) => {
     }
   }).then(dbUserData => {
     if (!dbUserData) {
-      res.status(400).json({ message: 'Incoorect username or password!' });
+      res.status(400).json({ message: 'Incorrect username or password!' });
       return;
     }
 

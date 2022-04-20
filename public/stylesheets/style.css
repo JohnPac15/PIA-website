@@ -64,8 +64,7 @@ body::before {
 }
 
 .overlay {
-  z-index: -1;
-  height: 0%;
+  height: 0px;
   top: 191px;
   opacity: 0;
   transition: 0.6s ease;

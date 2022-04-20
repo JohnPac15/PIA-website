@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Auto, Homeowners, PolicyOwner } = require("../models");
+const { Auto, Homeowners, PolicyOwner, Quote} = require("../models");
 
 router.get("/", (req, res) => {
   if (req.session.user_id === undefined) {
@@ -28,5 +28,6 @@ router.get("/", (req, res) => {
     });
   }
 });
+
 
 module.exports = router;
