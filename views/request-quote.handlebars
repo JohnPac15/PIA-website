@@ -8,7 +8,7 @@
                            <i class="bi bi-people"></i>  <span class="h3">Quote Information</span> 
                         </div>
                         {{!-- <form action="mailto:johnpac15@yahoo.com?subject=New Quote Request" method="post" enctype="text/plain"> --}}
-                        <form>
+                        <form id="quote-form">
                             <h1>Personal Information</h1>
                                 {{#if loggedIn}}
                                 <input type="name" name="name" id="name" class="form-control my-4 py-2" placeholder="name" value="{{user.first_name}} {{user.last_name}}">
@@ -71,3 +71,4 @@
     </div>
 </section>
 <script src="/javascript/quote.js"></script>
+{{!-- <script src="/javascript/email.js"></script> --}}
