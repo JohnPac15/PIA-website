@@ -7,7 +7,8 @@
                         <div class="h1">
                            <i class="bi bi-people"></i>  <span class="h3">Quote Information</span> 
                         </div>
-                        <form action="mailto:johnpac15@yahoo.com?subject=New Quote Request" method="post" enctype="text/plain">
+                        {{!-- <form action="mailto:johnpac15@yahoo.com?subject=New Quote Request" method="post" enctype="text/plain"> --}}
+                        <form id="quote-form">
                             <h1>Personal Information</h1>
                                 {{#if loggedIn}}
                                 <input type="name" name="name" id="name" class="form-control my-4 py-2" placeholder="name" value="{{user.first_name}} {{user.last_name}}">
@@ -19,8 +20,11 @@
                                 <input type="text" name="street address" id="street-address" class="form-control my-4 py-2" placeholder="Street address">
                                 <input type="text" name="city" id="city" class="form-control my-4 py-2" placeholder="City">
                                 <input type="text" name="state" id="State" class="form-control my-4 py-2" placeholder="State">
-                                <input type="number" name="zip code" id="Zip code" class="form-control my-4 py-2" placeholder="Zip code">
+                                <input type="number" name="zip code" id="Zip-code" class="form-control my-4 py-2" placeholder="Zip code">
                                 <input type="tel" name="phone number" id="phone" class="form-control my-4 py-2" placeholder="phone"><br>
+                                <div>
+                                    <button type="click" class="btn btn-warning my-3" id="email-submit">QUOTE</button>
+                                </div>
                             <h1>House Information</h1>
                                 <input type="text" name="year built" id="year-built" class="form-control my-4 py-2" placeholder="Year built?">
                                 <input type="text" name="dwelling value" id="dwelling-value" class="form-control my-4 py-2" placeholder="Dwelling value?">
@@ -57,8 +61,8 @@
                                 <button id="vehicle" type="click" class="btn btn-primary my-3" value="">Add a Vehicle</button>
                                 <br>
                             </div>
+                            
 
-                                <input type="submit" class="btn btn-warning my-3" id="email-submit"><br>
                         </form>
                     </div>
                 </div>
@@ -66,4 +70,5 @@
         </div>
     </div>
 </section>
-<script src="javascript/quote.js"></script>
+<script src="/javascript/quote.js"></script>
+{{!-- <script src="/javascript/email.js"></script> --}}

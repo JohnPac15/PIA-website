@@ -1,5 +1,5 @@
 const driveDiv = document.getElementById("driver-div");
-const emailBTN = document.getElementById('email-submit')
+const emailBTN = document.querySelector("#email-submit");
 const newDriver = document.getElementById("new-driver");
 const addDriver = document.getElementById("driver");
 const addVehicle = document.getElementById("vehicle");
@@ -113,12 +113,44 @@ function addNewVehicle(event) {
   newVehicle.appendChild(lineBreak);
 }
 
-function sendConfirmationMessage(event){
-  event.preventDefault()
-  console.log('do')
-  document.location.replace('/');
+async function createQuote(event) {
+  event.preventDefault();
+
+  const Name = document.querySelector("#name").value.trim();
+  const email = document.querySelector("#email").value.trim();
+  const street = document.querySelector("#street-address").value.trim();
+  const city = document.querySelector("#city").value.trim();
+  const state = document.querySelector("#State").value.trim();
+  const zipCode = document.querySelector("#Zip-code").value.trim();
+  const phone = document.querySelector("#phone").value.trim();
+
+  console.log("do", Name);
+
+  if (Name && email && street && city && state && zipCode && phone) {
+    const response = await fetch("/quote", {
+      method: 'post',
+      body: JSON.stringify({
+        Name,
+        email,
+        street,
+        city,
+        state,
+        zipCode,
+        phone,
+      }),
+      headers: { "Content-Type": "application/json" },
+    });
+    console.log(response, 'hey!')
+
+    if (response.ok) {
+      document.location.replace("/");
+    } else {
+
+      alert(response.statusText);
+    }
+  }
 }
 
 addDriver.addEventListener("click", addNewDriver);
 addVehicle.addEventListener("click", addNewVehicle);
-emailBTN.addEventListener('submit', sendConfirmationMessage);
+emailBTN.addEventListener("click", createQuote);

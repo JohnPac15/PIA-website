@@ -6,7 +6,6 @@
   "scripts": {
     "test": "jest",
     "start": "node server.js"
-
   },
   "repository": {
     "type": "git",
@@ -29,6 +28,7 @@
     "express-handlebars": "^6.0.2",
     "express-session": "^1.17.2",
     "mysql2": "^2.3.3",
+    "nodemailer": "^6.7.3",
     "passport": "^0.5.2",
     "passport-local": "^1.0.0",
     "sequelize": "^6.15.1",
