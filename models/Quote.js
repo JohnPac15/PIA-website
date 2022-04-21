@@ -38,12 +38,90 @@ Quote.init(
             type: DataTypes.INTEGER,
             allowNull: false,
         },
-        // house:{
-        //     references:{
-        //         model: 'house',
-        //         key: 'id'
-        //     }
-        // }
+        DOB:{
+            type: DataTypes.STRING,
+            allowNull: true,
+        },
+        occupation:{
+            type: DataTypes.STRING,
+            allowNull: true,
+        },
+        contact_time:{
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        textarea:{
+            type: DataTypes.STRING,
+            allowNull: true
+        }
+        // year_built:{
+        //     type: DataTypes.STRING,
+        //     allowNull: true
+        // },
+        // dwelling_value:{
+        //     type: DataTypes.STRING,
+        //     allowNull: true,
+        // },
+        // foundation:{
+        //     type: DataTypes.STRING,
+        //     allowNull: true,
+        // },
+        // age_of_roof:{
+        //     type: DataTypes.INTEGER,
+        //     allowNull: true,
+        // },
+        // type_of_roof:{
+        //     type: DataTypes.STRING,
+        //     allowNull: true,
+        // },
+        // type_of_siding:{
+        //     type: DataTypes.STRING,
+        //     allowNull: true,
+        // },
+        // square_footage:{
+        //     type: DataTypes.INTEGER,
+        //     allowNull: true,
+        // },
+        // property_size:{
+        //     type: DataTypes.INTEGER,
+        //     allowNull: true,
+        // },
+        // Driver_name:{
+        //     type: DataTypes.STRING,
+        //     allowNull: true,
+        // },
+        // DL_number:{
+        //     type: DataTypes.INTEGER,
+        //     allowNull: true,
+        // },
+        // vehicle_year:{
+        //     type: DataTypes.INTEGER,
+        //     allowNull: true,
+        // },
+        // vehicle_make:{
+        //     type: DataTypes.STRING,
+        //     allowNull: true,
+        // },
+        // vehicle_model:{
+        //     type: DataTypes.STRING,
+        //     allowNull: true,
+        // },
+        // VIN:{
+        //     type: DataTypes.STRING,
+        //     allowNull: true,
+        // },
+        // vehicle_usage:{
+        //     type: DataTypes.STRING,
+        //     allowNull: true,
+        // },
+        // lien_holder:{
+        //     type: DataTypes.STRING,
+        //     allowNull: true,
+        // },
+        // deductible_amount:{
+        //     type: DataTypes.INTEGER,
+        //     allowNull: true,
+        // },
     },
     {
         sequelize,

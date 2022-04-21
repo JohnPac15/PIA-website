@@ -10,23 +10,23 @@ router.get('/', (req, res) => {
       });
 })
 
-// router.post('/', (req, res) => {
-//     console.log('heyheyhey', req.body)
-//     Quote.create({
-//         name: req.body.Name,
-//         email: req.body.email,
-//         street_address: req.body.street,
-//         city: req.body.city,
-//         state: req.body.state,
-//         zip_code: req.body.zipCode,
-//         phone_number: req.body.phone,
-        
-//     })
-//     .then(dbQuoteData => res.json(dbQuoteData))
-//     .catch((err) => {
-//         console.log(err);
-//         res.status(500).json(err);
-//       });
-// })
+router.delete('/:id', (req, res) => {
+  Quote.destroy({
+    where:{
+      id: req.params.id
+    }
+  })
+  .then(dbQuoteData => {
+    if (!dbQuoteData) {
+        res.status(404).json({ message: "No quote found with this id" });
+        return;
+      }
+      res.json(dbQuoteData);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+})
 
 module.exports = router

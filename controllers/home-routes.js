@@ -88,4 +88,8 @@ router.get("/admin", authHelpers.adminRequired, (req, res) => {
   })
 });
 
+router.get("/account-manager", (req,res) => {
+  res.render("account-manager")
+})
+
 module.exports = router;
