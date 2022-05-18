@@ -100,3 +100,12 @@ body::before {
   background-color: var(--tertiary-color);
   border: var(--primary-color) solid 4px;
 }
+
+#flyer_card{
+  width: 100%;
+}
+
+/* #flyer_about{
+  width:auto;
+  height: 450px;
+} */

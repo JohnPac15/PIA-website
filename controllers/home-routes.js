@@ -38,6 +38,10 @@ router.get("/register", (req, res) => {
   res.render("register");
 });
 
+router.get("/information", (req, res) => {
+    res.render("information")
+});
+
 router.get("/dashboard", authHelpers.loginRequired, (req, res) => {
   PolicyOwner.findOne({
     where: {
